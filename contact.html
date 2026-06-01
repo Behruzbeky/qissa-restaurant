@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QISSA — Contact</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ====== EMBEDDED CSS ====== -->
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0A0502;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: #F0E4C8;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
+            text-align: center;
+            padding: 52px 20px 44px 20px;
+            border-bottom: 1px solid #2A1A08;
+        }
+
+        .header-stars {
+            color: #C4A882;
+            font-size: 11px;
+            letter-spacing: 6px;
+            margin: 0 0 18px 0;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 0 6px 0;
+            letter-spacing: 18px;
+            text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
+                         -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-style: italic;
+            color: #9A7B5A;
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: rgba(8, 4, 2, 0.92);
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #C4A882;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            color: #C4A882;
+            text-decoration: none;
+            margin: 0 22px;
+            font-size: 13px;
+            letter-spacing: 4px;
+        }
+
+        /* Contact section */
+        .contact-section {
+            padding: 110px 80px;
+            background-color: #0A0502;
+        }
+
+        .section-heading {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 44px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            margin: 0 0 14px 0;
+        }
+
+        .section-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            text-align: center;
+            color: #C4A882;
+            font-size: 19px;
+            margin: 0 0 70px 0;
+        }
+
+        /* Left info column */
+        .info-heading {
+            font-family: 'Cinzel', serif;
+            color: #FFFFFF;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 0 0 30px 0;
+        }
+
+        .info-label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #D4A843;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin: 0 0 6px 0;
+        }
+
+        .info-value {
+            font-family: 'Cormorant Garamond', serif;
+            color: #E8DCC8;
+            font-size: 19px;
+            line-height: 1.6;
+            margin: 0 0 28px 0;
+        }
+
+        /* Right form column */
+        .form-label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 12px;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #3A2810;
+            color: #FFFFFF;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            box-sizing: border-box;
+            margin-bottom: 28px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom: 1px solid #C4A882;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 14px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #3A2810;
+            color: #FFFFFF;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            box-sizing: border-box;
+            height: 60px;
+            resize: vertical;
+            margin-bottom: 36px;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-bottom: 1px solid #C4A882;
+        }
+
+        /* Placeholder hint colour so it stays readable on dark background */
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #7A6040;
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #C4A882;
+            color: #080402;
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #030201;
+            padding: 60px 60px 30px 60px;
+            border-top: 1px solid #2A1A08;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #E8E0D0;
+            margin: 0 0 4px 0;
+            letter-spacing: 12px;
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 15px;
+            margin: 0 0 30px 0;
+            letter-spacing: 2px;
+        }
+
+        .footer-label {
+            font-family: 'Cinzel', serif;
+            color: #C4A882;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin: 0 0 14px 0;
+        }
+
+        .footer-info {
+            font-family: 'Cormorant Garamond', serif;
+            color: #9A8060;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .footer-copy {
+            font-family: 'Cormorant Garamond', serif;
+            color: #6A5040;
+            font-size: 13px;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <h1 class="logo">QISSA</h1>
+        <svg width="280" height="16" viewBox="0 0 280 16" style="display: block; margin: 10px auto 14px auto;">
+            <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+            <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
+            <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+        </svg>
+        <p class="tagline">Where Every Dish Tells a Story</p>
+    </header>
+
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+
+    <!-- ====== CONTACT SECTION ====== -->
+    <section class="contact-section">
+
+        <h2 class="section-heading">Reserve a Table</h2>
+        <p class="section-sub">We look forward to hosting you</p>
+
+        <!-- Two columns: restaurant info left, reservation form right -->
+        <table style="width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse;">
+            <tr>
+
+                <!-- LEFT: restaurant contact details -->
+                <td style="width: 42%; padding: 0 70px 0 0; vertical-align: top;">
+                    <h3 class="info-heading">Visit Us</h3>
+
+                    <p class="info-label">ADDRESS</p>
+                    <p class="info-value">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+
+                    <p class="info-label">PHONE</p>
+                    <p class="info-value">+998 88 100-22-55</p>
+
+                    <p class="info-label">INSTAGRAM</p>
+                    <p class="info-value">@tandiriy_uz</p>
+
+                    <p class="info-label">OPENING HOURS</p>
+                    <p class="info-value">Mon–Fri: 12:00 – 23:00<br>Sat–Sun: 10:00 – 23:00</p>
+                </td>
+
+                <!-- RIGHT: reservation form -->
+                <td style="width: 58%; vertical-align: top;">
+
+                    <label class="form-label">FULL NAME</label>
+                    <input type="text" placeholder="Your name" class="form-input">
+
+                    <label class="form-label">PHONE NUMBER</label>
+                    <input type="tel" placeholder="+998 _ _ _ _ _ _ _ _ _" class="form-input">
+
+                    <label class="form-label">DATE OF VISIT</label>
+                    <input type="date" class="form-input">
+
+                    <label class="form-label">NUMBER OF GUESTS</label>
+                    <input type="number" placeholder="2" min="1" max="20" class="form-input">
+
+                    <label class="form-label">SPECIAL REQUESTS</label>
+                    <textarea placeholder="Any dietary requirements or special occasions..." class="form-textarea"></textarea>
+
+                    <button class="form-btn" onclick="confirmReservation()">CONFIRM RESERVATION</button>
+
+                </td>
+
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <h3 class="footer-logo">QISSA</h3>
+        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+        <div style="border-top: 1px solid #2A1A08; margin-bottom: 40px;"></div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+            <tr>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">VISIT US</p>
+                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">CONTACT</p>
+                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top;">
+                    <p class="footer-label">HOURS</p>
+                    <p class="footer-info">Mon–Fri: 12:00 – 23:00<br>Sat–Sun: 10:00 – 23:00</p>
+                </td>
+            </tr>
+        </table>
+        <div style="border-top: 1px solid #1A0E04; padding-top: 24px;">
+            <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <!-- Confirmation alert when reservation form is submitted -->
+    <script>
+        function confirmReservation() {
+            alert("Thank you for your reservation!\nWe will contact you shortly to confirm your booking.\n\nQISSA Restaurant — +998 88 100-22-55");
+        }
+    </script>
+
+</body>
+</html>

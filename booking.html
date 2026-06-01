@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QISSA — Booking</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ====== EMBEDDED CSS ====== -->
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0A0502;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: #F0E4C8;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
+            text-align: center;
+            padding: 52px 20px 44px 20px;
+            border-bottom: 1px solid #2A1A08;
+        }
+
+        .header-stars {
+            color: #C4A882;
+            font-size: 11px;
+            letter-spacing: 6px;
+            margin: 0 0 18px 0;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 0 6px 0;
+            letter-spacing: 18px;
+            text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
+                         -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-style: italic;
+            color: #9A7B5A;
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: rgba(8, 4, 2, 0.92);
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #C4A882;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            color: #C4A882;
+            text-decoration: none;
+            margin: 0 22px;
+            font-size: 13px;
+            letter-spacing: 4px;
+        }
+
+        .booking-section {
+            padding: 90px 20px 110px 20px;
+            background-color: #0A0502;
+        }
+
+        .section-heading {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 44px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            margin: 0 0 14px 0;
+        }
+
+        .section-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            text-align: center;
+            color: #C4A882;
+            font-size: 19px;
+            margin: 0 0 60px 0;
+        }
+
+        .booking-card {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .block-label {
+            font-family: 'Cinzel', serif;
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-align: center;
+            margin: 0 0 30px 0;
+        }
+
+        .block-ornament {
+            display: block;
+            margin: 0 auto 40px auto;
+        }
+
+        .summary-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #1A0E04;
+        }
+
+        .summary-item-name {
+            font-family: 'Cinzel', serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin: 0 0 6px 0;
+        }
+
+        .summary-item-detail {
+            font-family: 'Cormorant Garamond', serif;
+            color: #9A8060;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .summary-item-price {
+            font-family: 'Cormorant Garamond', serif;
+            color: #C4A882;
+            font-size: 17px;
+            text-align: right;
+            margin: 0;
+        }
+
+        .summary-total {
+            font-family: 'Cinzel', serif;
+            color: #D4A843;
+            font-size: 19px;
+            letter-spacing: 2px;
+            margin: 22px 0 0 0;
+            padding-top: 20px;
+            border-top: 1px solid #C4A882;
+            text-align: right;
+        }
+
+        .empty-warning {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #7A6040;
+            font-size: 17px;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .section-divider {
+            margin: 60px 0;
+            border: none;
+            border-top: 1px solid #2A1A08;
+        }
+
+        .form-label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 12px;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #3A2810;
+            color: #FFFFFF;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom: 1px solid #C4A882;
+        }
+
+        .form-input::placeholder {
+            color: #7A6040;
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #C4A882;
+            color: #080402;
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 4px;
+            cursor: pointer;
+            margin-top: 14px;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 12px;
+            color: #9A7B5A;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #C4A882;
+        }
+
+        footer {
+            background-color: #030201;
+            padding: 60px 60px 30px 60px;
+            border-top: 1px solid #2A1A08;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #E8E0D0;
+            margin: 0 0 4px 0;
+            letter-spacing: 12px;
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 15px;
+            margin: 0 0 30px 0;
+            letter-spacing: 2px;
+        }
+
+        .footer-label {
+            font-family: 'Cinzel', serif;
+            color: #C4A882;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin: 0 0 14px 0;
+        }
+
+        .footer-info {
+            font-family: 'Cormorant Garamond', serif;
+            color: #9A8060;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .footer-copy {
+            font-family: 'Cormorant Garamond', serif;
+            color: #6A5040;
+            font-size: 13px;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h1 class="logo">QISSA</h1>
+        <svg width="280" height="16" viewBox="0 0 280 16" style="display: block; margin: 10px auto 14px auto;">
+            <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+            <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
+            <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+        </svg>
+        <p class="tagline">Where Every Dish Tells a Story</p>
+    </header>
+
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+
+    <!-- ====== BOOKING SECTION ====== -->
+    <section class="booking-section">
+
+        <h2 class="section-heading">Your Booking</h2>
+        <p class="section-sub">Complete your details to confirm the order</p>
+
+        <!-- Single centered column: summary on top, form below -->
+        <div class="booking-card">
+
+            <!-- ORDER SUMMARY -->
+            <p class="block-label">Order Summary</p>
+            <svg width="160" height="14" viewBox="0 0 160 14" class="block-ornament">
+                <line x1="0" y1="7" x2="64" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+                <polygon points="80,2 86,7 80,12 74,7" fill="#C4A882" opacity="0.7"/>
+                <line x1="96" y1="7" x2="160" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+            </svg>
+
+            <div id="summary-list"></div>
+            <div id="summary-total"></div>
+
+            <!-- Divider between the two blocks -->
+            <hr class="section-divider">
+
+            <!-- YOUR DETAILS -->
+            <p class="block-label">Your Details</p>
+            <svg width="160" height="14" viewBox="0 0 160 14" class="block-ornament">
+                <line x1="0" y1="7" x2="64" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+                <polygon points="80,2 86,7 80,12 74,7" fill="#C4A882" opacity="0.7"/>
+                <line x1="96" y1="7" x2="160" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+            </svg>
+
+            <label class="form-label">FULL NAME</label>
+            <input type="text" id="inp-name" placeholder="Your full name" class="form-input">
+
+            <label class="form-label">PHONE NUMBER</label>
+            <input type="tel" id="inp-phone" placeholder="+998 _ _ _ _ _ _ _ _ _" class="form-input">
+
+            <label class="form-label">DATE OF VISIT</label>
+            <input type="date" id="inp-date" class="form-input">
+
+            <button class="form-btn" onclick="submitBooking()">CONFIRM &amp; VIEW RECEIPT</button>
+            <a href="menu.html" class="back-link">&#8592; Back to Menu</a>
+
+        </div>
+    </section>
+
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h3 class="footer-logo">QISSA</h3>
+        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+        <div style="border-top: 1px solid #2A1A08; margin-bottom: 40px;"></div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+            <tr>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">VISIT US</p>
+                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">CONTACT</p>
+                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top;">
+                    <p class="footer-label">HOURS</p>
+                    <p class="footer-info">Mon&ndash;Fri: 12:00 &ndash; 23:00<br>Sat&ndash;Sun: 10:00 &ndash; 23:00</p>
+                </td>
+            </tr>
+        </table>
+        <div style="border-top: 1px solid #1A0E04; padding-top: 24px;">
+            <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+
+        // Load cart from localStorage
+        var cart = JSON.parse(localStorage.getItem('qissa_cart')) || [];
+
+        // Render order summary
+        function renderSummary() {
+            var list = document.getElementById('summary-list');
+            var totalBox = document.getElementById('summary-total');
+
+            if (cart.length === 0) {
+                list.innerHTML = '<p class="empty-warning">Your cart is empty.<br>Go back to Menu to add items.</p>';
+                totalBox.innerHTML = '';
+                return;
+            }
+
+            var html = '';
+            var grandTotal = 0;
+
+            for (var i = 0; i < cart.length; i++) {
+                var item = cart[i];
+                var subtotal = item.price * item.qty;
+                grandTotal += subtotal;
+
+                html += '<div class="summary-item">';
+                html += '<table style="width:100%; border-collapse:collapse;">';
+                html += '<tr>';
+                html += '<td style="vertical-align:top;">';
+                html += '<p class="summary-item-name">' + item.name + '</p>';
+                html += '<p class="summary-item-detail">Qty: ' + item.qty + ' &times; ' + item.price.toLocaleString() + ' UZS</p>';
+                html += '</td>';
+                html += '<td style="vertical-align:top; text-align:right;">';
+                html += '<p class="summary-item-price">' + subtotal.toLocaleString() + ' UZS</p>';
+                html += '</td>';
+                html += '</tr>';
+                html += '</table>';
+                html += '</div>';
+            }
+
+            list.innerHTML = html;
+            totalBox.innerHTML = '<p class="summary-total">TOTAL: ' + grandTotal.toLocaleString() + ' UZS</p>';
+        }
+
+        // Validate and go to receipt
+        function submitBooking() {
+            var name  = document.getElementById('inp-name').value.trim();
+            var phone = document.getElementById('inp-phone').value.trim();
+            var date  = document.getElementById('inp-date').value;
+
+            if (!name || !phone || !date) {
+                alert('Please fill in all your details before confirming.');
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please go back to Menu and add items.');
+                return;
+            }
+
+            localStorage.setItem('qissa_customer', JSON.stringify({
+                name: name,
+                phone: phone,
+                date: date
+            }));
+
+            window.location.href = 'receipt.html';
+        }
+
+        renderSummary();
+
+    </script>
+
+</body>
+</html>

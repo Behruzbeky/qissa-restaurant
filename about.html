@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QISSA — About Us</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ====== EMBEDDED CSS ====== -->
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0A0502;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: #F0E4C8;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
+            text-align: center;
+            padding: 52px 20px 44px 20px;
+            border-bottom: 1px solid #2A1A08;
+        }
+
+        .header-stars {
+            color: #C4A882;
+            font-size: 11px;
+            letter-spacing: 6px;
+            margin: 0 0 18px 0;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 0 6px 0;
+            letter-spacing: 18px;
+            text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
+                         -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-style: italic;
+            color: #9A7B5A;
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: rgba(8, 4, 2, 0.92);
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #C4A882;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            color: #C4A882;
+            text-decoration: none;
+            margin: 0 22px;
+            font-size: 13px;
+            letter-spacing: 4px;
+        }
+
+        /* ---- INTRO BLOCK ---- */
+        .about-intro {
+            padding: 120px 80px 90px 80px;
+            text-align: center;
+            background-color: #0A0502;
+        }
+
+        .section-heading {
+            font-family: 'Cinzel', serif;
+            color: #FFFFFF;
+            font-size: 44px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            margin: 0 0 30px 0;
+        }
+
+        /* Large opening manifesto line — the statement that gets read */
+        .intro-statement {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            color: #E8DCC8;
+            font-size: 30px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-statement .gold {
+            color: #C4A882;
+            font-style: italic;
+        }
+
+        /* ---- FULL WIDTH FEATURE IMAGE ---- */
+        .feature-image {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.78);
+        }
+
+        /* ---- SPLIT SECTION (image + text) ---- */
+        .split-section {
+            padding: 90px 80px;
+            background-color: #0A0502;
+        }
+
+        .split-text-heading {
+            font-family: 'Cinzel', serif;
+            color: #FFFFFF;
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 0 0 26px 0;
+        }
+
+        .split-text {
+            font-family: 'Cormorant Garamond', serif;
+            color: #C8C0B0;
+            font-size: 18px;
+            line-height: 1.9;
+            margin: 0 0 20px 0;
+        }
+
+        .split-img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.82);
+        }
+
+        /* ---- LARGE PULL QUOTE ---- */
+        .quote-section {
+            padding: 100px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #0A0502 0%, #0D0704 100%);
+            border-top: 1px solid #1A0E04;
+            border-bottom: 1px solid #1A0E04;
+        }
+
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            color: #FFFFFF;
+            font-size: 38px;
+            line-height: 1.5;
+            max-width: 880px;
+            margin: 0 auto 28px auto;
+        }
+
+        .quote-author {
+            font-family: 'Cinzel', serif;
+            color: #C4A882;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        /* ---- STATS (no boxes, just space) ---- */
+        .stats-section {
+            padding: 90px 80px;
+            background-color: #0A0502;
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            color: #C4A882;
+            font-size: 48px;
+            font-weight: 400;
+            margin: 0 0 10px 0;
+        }
+
+        .stat-label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            color: #9A8060;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+
+        /* Thin vertical divider between stats */
+        .stat-divider {
+            width: 1px;
+            background-color: #2A1A08;
+        }
+
+        /* ---- OUR SPACE GALLERY ---- */
+        .space-section {
+            padding: 0 80px 110px 80px;
+            background-color: #0A0502;
+        }
+
+        .space-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            color: #C4A882;
+            font-size: 14px;
+            letter-spacing: 6px;
+            margin: 0 0 50px 0;
+        }
+
+        .space-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.82);
+            transition: filter 0.3s;
+        }
+
+        .space-img:hover {
+            filter: brightness(1);
+        }
+
+        footer {
+            background-color: #030201;
+            padding: 60px 60px 30px 60px;
+            border-top: 1px solid #2A1A08;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #E8E0D0;
+            margin: 0 0 4px 0;
+            letter-spacing: 12px;
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 15px;
+            margin: 0 0 30px 0;
+            letter-spacing: 2px;
+        }
+
+        .footer-label {
+            font-family: 'Cinzel', serif;
+            color: #C4A882;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin: 0 0 14px 0;
+        }
+
+        .footer-info {
+            font-family: 'Cormorant Garamond', serif;
+            color: #9A8060;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .footer-copy {
+            font-family: 'Cormorant Garamond', serif;
+            color: #6A5040;
+            font-size: 13px;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <h1 class="logo">QISSA</h1>
+        <svg width="280" height="16" viewBox="0 0 280 16" style="display: block; margin: 10px auto 14px auto;">
+            <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+            <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
+            <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+        </svg>
+        <p class="tagline">Where Every Dish Tells a Story</p>
+    </header>
+
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+
+    <!-- ====== INTRO ====== -->
+    <!-- Large opening statement instead of a wall of text -->
+    <section class="about-intro">
+        <h2 class="section-heading">Our Story</h2>
+        <p class="intro-statement">
+            QISSA means <span class="gold">"tale"</span> in the ancient languages of
+            Central Asia. We built this restaurant on a simple belief —
+            that food is the oldest form of storytelling.
+        </p>
+    </section>
+
+
+    <!-- ====== FEATURE IMAGE ====== -->
+    <!-- Full width interior photo for atmosphere -->
+    <img src="Images/interior.jpg" alt="QISSA restaurant interior" class="feature-image">
+
+
+    <!-- ====== SPLIT: TEXT + IMAGE ====== -->
+    <section class="split-section">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <!-- Left: short text -->
+                <td style="width: 50%; padding: 0 60px 0 0; vertical-align: middle;">
+                    <h3 class="split-text-heading">Born in the Tandoor</h3>
+                    <p class="split-text">
+                        Every dish we serve carries centuries of tradition — passed
+                        down through generations of Uzbek families who understood
+                        that a meal is never just a meal.
+                    </p>
+                    <p class="split-text">
+                        Our chefs work the clay tandoor the slow, patient way,
+                        locking in flavour that tells you something true about
+                        the land this food comes from.
+                    </p>
+                </td>
+                <!-- Right: image -->
+                <td style="width: 50%; vertical-align: middle;">
+                    <img src="Images/gallery2.jpg" alt="Tandoor kitchen" class="split-img">
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- ====== PULL QUOTE ====== -->
+    <!-- Large elegant quote to create a premium pause -->
+    <section class="quote-section">
+        <p class="pull-quote">
+            "We don't just cook for our guests. We tell them where
+            they come from, one plate at a time."
+        </p>
+        <p class="quote-author">— THE QISSA KITCHEN</p>
+    </section>
+
+
+    <!-- ====== STATS (borderless) ====== -->
+    <section class="stats-section">
+        <table style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse;">
+            <tr>
+                <td style="width: 33%; text-align: center; vertical-align: middle;">
+                    <p class="stat-number">10+</p>
+                    <p class="stat-label">YEARS OF TRADITION</p>
+                </td>
+                <td class="stat-divider"></td>
+                <td style="width: 33%; text-align: center; vertical-align: middle;">
+                    <p class="stat-number">25+</p>
+                    <p class="stat-label">SIGNATURE DISHES</p>
+                </td>
+                <td class="stat-divider"></td>
+                <td style="width: 33%; text-align: center; vertical-align: middle;">
+                    <p class="stat-number">82K</p>
+                    <p class="stat-label">INSTAGRAM FOLLOWERS</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- ====== OUR SPACE GALLERY ====== -->
+    <section class="space-section">
+        <p class="space-title">OUR SPACE</p>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="width: 33%; padding: 0 8px 0 0; vertical-align: top;">
+                    <img src="Images/gallery1.jpg" alt="Dining hall" class="space-img">
+                </td>
+                <td style="width: 33%; padding: 0 4px; vertical-align: top;">
+                    <img src="Images/gallery3.jpg" alt="Restaurant atmosphere" class="space-img">
+                </td>
+                <td style="width: 33%; padding: 0 0 0 8px; vertical-align: top;">
+                    <img src="Images/gallery4.jpg" alt="Evening setting" class="space-img">
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <h3 class="footer-logo">QISSA</h3>
+        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+        <div style="border-top: 1px solid #2A1A08; margin-bottom: 40px;"></div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+            <tr>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">VISIT US</p>
+                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">CONTACT</p>
+                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top;">
+                    <p class="footer-label">HOURS</p>
+                    <p class="footer-info">Mon–Fri: 12:00 – 23:00<br>Sat–Sun: 10:00 – 23:00</p>
+                </td>
+            </tr>
+        </table>
+        <div style="border-top: 1px solid #1A0E04; padding-top: 24px;">
+            <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QISSA — Receipt</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ====== EMBEDDED CSS ====== -->
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0A0502;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: #F0E4C8;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
+            text-align: center;
+            padding: 52px 20px 44px 20px;
+            border-bottom: 1px solid #2A1A08;
+        }
+
+        .header-stars {
+            color: #C4A882;
+            font-size: 11px;
+            letter-spacing: 6px;
+            margin: 0 0 18px 0;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 0 6px 0;
+            letter-spacing: 18px;
+            text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
+                         -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-style: italic;
+            color: #9A7B5A;
+            font-size: 18px;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: rgba(8, 4, 2, 0.92);
+            text-align: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #C4A882;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            color: #C4A882;
+            text-decoration: none;
+            margin: 0 22px;
+            font-size: 13px;
+            letter-spacing: 4px;
+        }
+
+        .receipt-section {
+            padding: 90px 20px 110px 20px;
+            background-color: #0A0502;
+        }
+
+        .section-heading {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 44px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            margin: 0 0 14px 0;
+        }
+
+        .section-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            text-align: center;
+            color: #C4A882;
+            font-size: 19px;
+            margin: 0 0 60px 0;
+        }
+
+        /* Centered receipt card */
+        .receipt-card {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #2A1A08;
+            background-color: #0D0704;
+            padding: 50px;
+        }
+
+        .receipt-head {
+            text-align: center;
+            border-bottom: 1px solid #2A1A08;
+            padding-bottom: 28px;
+            margin-bottom: 28px;
+        }
+
+        .receipt-rest-name {
+            font-family: 'Cinzel', serif;
+            color: #D4A843;
+            font-size: 30px;
+            letter-spacing: 8px;
+            margin: 0 0 8px 0;
+        }
+
+        .receipt-rest-info {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #9A8060;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+            letter-spacing: 1px;
+        }
+
+        .receipt-meta {
+            display: table;
+            width: 100%;
+            margin-bottom: 28px;
+            border-bottom: 1px solid #2A1A08;
+            padding-bottom: 22px;
+        }
+
+        .receipt-meta-left {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .receipt-meta-right {
+            display: table-cell;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        .meta-label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin: 0 0 6px 0;
+        }
+
+        .meta-value {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #FFFFFF;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .customer-block {
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #2A1A08;
+        }
+
+        .customer-row {
+            display: table;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .customer-label {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 10px;
+            letter-spacing: 2px;
+            width: 32%;
+            vertical-align: middle;
+        }
+
+        .customer-value {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #FFFFFF;
+            font-size: 15px;
+            letter-spacing: 1px;
+            vertical-align: middle;
+        }
+
+        .items-head {
+            display: table;
+            width: 100%;
+            border-bottom: 1px solid #2A1A08;
+            padding-bottom: 12px;
+            margin-bottom: 6px;
+        }
+
+        .ih-item {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .ih-qty {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-align: center;
+            width: 70px;
+        }
+
+        .ih-price {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #C4A882;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-align: right;
+            width: 140px;
+        }
+
+        .receipt-item {
+            display: table;
+            width: 100%;
+            padding: 14px 0;
+            border-bottom: 1px solid #1A0E04;
+        }
+
+        .ri-name {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #FFFFFF;
+            font-size: 14px;
+            letter-spacing: 1px;
+            vertical-align: middle;
+        }
+
+        .ri-qty {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #C8C0B0;
+            font-size: 14px;
+            text-align: center;
+            width: 70px;
+            vertical-align: middle;
+        }
+
+        .ri-price {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #C4A882;
+            font-size: 14px;
+            text-align: right;
+            width: 140px;
+            vertical-align: middle;
+        }
+
+        .sub-row {
+            display: table;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .sub-label {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #9A8060;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .sub-value {
+            display: table-cell;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #C8C0B0;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .total-row {
+            display: table;
+            width: 100%;
+            padding: 18px 0 8px 0;
+            margin-top: 8px;
+            border-top: 1px solid #C4A882;
+        }
+
+        .total-label {
+            display: table-cell;
+            font-family: 'Cinzel', serif;
+            color: #D4A843;
+            font-size: 17px;
+            letter-spacing: 3px;
+        }
+
+        .total-value {
+            display: table-cell;
+            font-family: 'Cinzel', serif;
+            color: #D4A843;
+            font-size: 19px;
+            text-align: right;
+            letter-spacing: 1px;
+        }
+
+        .thankyou {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 26px;
+            border-top: 1px solid #2A1A08;
+        }
+
+        .thankyou-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #C8C0B0;
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+
+        .thankyou-sub {
+            font-family: 'Cinzel', serif;
+            color: #7A6040;
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+
+        .btn-row {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .print-btn {
+            padding: 14px 36px;
+            background-color: transparent;
+            color: #C4A882;
+            border: 1px solid #C4A882;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            margin: 0 8px;
+        }
+
+        .new-order-btn {
+            padding: 14px 36px;
+            background-color: #C4A882;
+            color: #080402;
+            border: none;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            margin: 0 8px;
+        }
+
+        .empty-msg {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #7A6040;
+            font-size: 17px;
+            padding: 40px 0;
+        }
+
+        footer {
+            background-color: #030201;
+            padding: 60px 60px 30px 60px;
+            border-top: 1px solid #2A1A08;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #E8E0D0;
+            margin: 0 0 4px 0;
+            letter-spacing: 12px;
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 15px;
+            margin: 0 0 30px 0;
+            letter-spacing: 2px;
+        }
+
+        .footer-label {
+            font-family: 'Cinzel', serif;
+            color: #C4A882;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin: 0 0 14px 0;
+        }
+
+        .footer-info {
+            font-family: 'Cormorant Garamond', serif;
+            color: #9A8060;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .footer-copy {
+            font-family: 'Cormorant Garamond', serif;
+            color: #6A5040;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* ====== PRINT STYLES ====== */
+        /* When printing, show only the receipt card on white paper */
+        @media print {
+            header, nav, footer,
+            .section-heading, .section-sub,
+            .btn-row, .receipt-section > svg {
+                display: none !important;
+            }
+
+            body {
+                background-color: #FFFFFF;
+            }
+
+            .receipt-section {
+                padding: 0;
+                background: none;
+            }
+
+            .receipt-card {
+                max-width: 100%;
+                border: 1px solid #999999;
+                background-color: #FFFFFF;
+                padding: 30px;
+                margin: 0;
+            }
+
+            .receipt-rest-name { color: #8B6914; }
+            .receipt-rest-info { color: #555555; }
+            .meta-value, .customer-value, .ri-name { color: #000000; }
+            .meta-label, .customer-label, .ih-item, .ih-qty, .ih-price { color: #8B6914; }
+            .ri-qty, .ri-price, .sub-label, .sub-value { color: #555555; }
+            .total-label, .total-value { color: #8B6914; }
+            .thankyou-text { color: #555555; }
+            .thankyou-sub { color: #999999; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h1 class="logo">QISSA</h1>
+        <svg width="280" height="16" viewBox="0 0 280 16" style="display: block; margin: 10px auto 14px auto;">
+            <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+            <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
+            <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+        </svg>
+        <p class="tagline">Where Every Dish Tells a Story</p>
+    </header>
+
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+
+    <!-- ====== RECEIPT SECTION ====== -->
+    <section class="receipt-section">
+
+        <h2 class="section-heading">Order Receipt</h2>
+        <p class="section-sub">Thank you for choosing QISSA</p>
+
+        <svg width="200" height="16" viewBox="0 0 200 16" style="display: block; margin: 0 auto 50px auto;">
+            <line x1="0" y1="8" x2="84" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+            <polygon points="100,3 106,8 100,13 94,8" fill="#C4A882" opacity="0.7"/>
+            <line x1="116" y1="8" x2="200" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+        </svg>
+
+        <!-- Receipt card filled by JavaScript -->
+        <div class="receipt-card" id="receipt-card"></div>
+
+        <!-- Action buttons -->
+        <div class="btn-row">
+            <button class="print-btn" onclick="window.print()">PRINT RECEIPT</button>
+            <button class="new-order-btn" onclick="newOrder()">NEW ORDER</button>
+        </div>
+
+    </section>
+
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h3 class="footer-logo">QISSA</h3>
+        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+        <div style="border-top: 1px solid #2A1A08; margin-bottom: 40px;"></div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+            <tr>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">VISIT US</p>
+                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                    <p class="footer-label">CONTACT</p>
+                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                </td>
+                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top;">
+                    <p class="footer-label">HOURS</p>
+                    <p class="footer-info">Mon&ndash;Fri: 12:00 &ndash; 23:00<br>Sat&ndash;Sun: 10:00 &ndash; 23:00</p>
+                </td>
+            </tr>
+        </table>
+        <div style="border-top: 1px solid #1A0E04; padding-top: 24px;">
+            <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+
+        // Load cart and customer data from localStorage
+        var cart     = JSON.parse(localStorage.getItem('qissa_cart'))     || [];
+        var customer = JSON.parse(localStorage.getItem('qissa_customer')) || {};
+
+        // Generate a random receipt number
+        var receiptNum = 'QSS-' + Math.floor(Math.random() * 90000 + 10000);
+
+        // Build the full receipt
+        function buildReceipt() {
+            var card = document.getElementById('receipt-card');
+
+            if (!customer.name || cart.length === 0) {
+                card.innerHTML = '<p class="empty-msg">No order data found.<br>Please go back and complete the booking form.</p>';
+                return;
+            }
+
+            var grandTotal = 0;
+            for (var i = 0; i < cart.length; i++) {
+                grandTotal += cart[i].price * cart[i].qty;
+            }
+
+            var html = '';
+
+            // Restaurant header
+            html += '<div class="receipt-head">';
+            html += '<p class="receipt-rest-name">QISSA</p>';
+            html += '<p class="receipt-rest-info">Ukchi Street, 5 &nbsp;|&nbsp; Tashkent, Uzbekistan</p>';
+            html += '<p class="receipt-rest-info">+998 88 100-22-55 &nbsp;|&nbsp; @tandiriy_uz</p>';
+            html += '</div>';
+
+            // Receipt number and date
+            html += '<div class="receipt-meta">';
+            html += '<div class="receipt-meta-left">';
+            html += '<p class="meta-label">RECEIPT NO.</p>';
+            html += '<p class="meta-value">' + receiptNum + '</p>';
+            html += '</div>';
+            html += '<div class="receipt-meta-right">';
+            html += '<p class="meta-label">DATE OF VISIT</p>';
+            html += '<p class="meta-value">' + customer.date + '</p>';
+            html += '</div>';
+            html += '</div>';
+
+            // Customer details
+            html += '<div class="customer-block">';
+            html += '<div class="customer-row"><span class="customer-label">NAME</span><span class="customer-value">' + customer.name + '</span></div>';
+            html += '<div class="customer-row"><span class="customer-label">PHONE</span><span class="customer-value">' + customer.phone + '</span></div>';
+            html += '</div>';
+
+            // Items header
+            html += '<div class="items-head">';
+            html += '<span class="ih-item">ITEM</span>';
+            html += '<span class="ih-qty">QTY</span>';
+            html += '<span class="ih-price">SUBTOTAL</span>';
+            html += '</div>';
+
+            // Each item
+            for (var j = 0; j < cart.length; j++) {
+                var item = cart[j];
+                var sub = item.price * item.qty;
+                html += '<div class="receipt-item">';
+                html += '<span class="ri-name">' + item.name + '</span>';
+                html += '<span class="ri-qty">' + item.qty + '</span>';
+                html += '<span class="ri-price">' + sub.toLocaleString() + ' UZS</span>';
+                html += '</div>';
+            }
+
+            // Subtotal
+            html += '<div class="sub-row" style="margin-top: 8px;">';
+            html += '<span class="sub-label">Subtotal</span>';
+            html += '<span class="sub-value">' + grandTotal.toLocaleString() + ' UZS</span>';
+            html += '</div>';
+
+            // Service charge 10%
+            var service = Math.round(grandTotal * 0.10);
+            html += '<div class="sub-row">';
+            html += '<span class="sub-label">Service Charge (10%)</span>';
+            html += '<span class="sub-value">' + service.toLocaleString() + ' UZS</span>';
+            html += '</div>';
+
+            // Grand total
+            var finalTotal = grandTotal + service;
+            html += '<div class="total-row">';
+            html += '<span class="total-label">TOTAL</span>';
+            html += '<span class="total-value">' + finalTotal.toLocaleString() + ' UZS</span>';
+            html += '</div>';
+
+            // Thank you
+            html += '<div class="thankyou">';
+            html += '<p class="thankyou-text">Thank you for dining with us, ' + customer.name + '</p>';
+            html += '<p class="thankyou-sub">QISSA &nbsp;&#10022;&nbsp; WHERE EVERY DISH TELLS A STORY</p>';
+            html += '</div>';
+
+            card.innerHTML = html;
+        }
+
+        // Clear order and start a new one
+        function newOrder() {
+            localStorage.removeItem('qissa_cart');
+            localStorage.removeItem('qissa_customer');
+            window.location.href = 'menu.html';
+        }
+
+        buildReceipt();
+
+    </script>
+
+</body>
+</html>
