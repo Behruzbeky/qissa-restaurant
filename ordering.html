@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QISSA — Ordering</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h1 class="logo">QISSA</h1>
+        <svg width="280" height="16" viewBox="0 0 280 16" class="logo-ornament">
+            <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+            <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
+            <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
+        </svg>
+        <p class="tagline">Where Every Dish Tells a Story</p>
+    </header>
+
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="ordering.html">ORDER</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+
+    <!-- ====== ORDERING SECTION ====== -->
+    <!-- Data collection form. All fields validated with JavaScript -->
+    <!-- before the receipt is generated.                            -->
+    <section class="ordering-section">
+
+        <h2 class="section-heading">Place Your Order</h2>
+        <p class="section-sub">Fill in your details and choose up to three menus</p>
+
+        <div class="ordering-card">
+
+            <!-- ── BILLING INFORMATION ── -->
+            <p class="block-label">Billing Information</p>
+            <svg width="160" height="14" viewBox="0 0 160 14" class="block-ornament">
+                <line x1="0" y1="7" x2="64" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+                <polygon points="80,2 86,7 80,12 74,7" fill="#C4A882" opacity="0.7"/>
+                <line x1="96" y1="7" x2="160" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+            </svg>
+
+            <!-- Name: cannot be empty, cannot contain numbers -->
+            <label class="form-label">FULL NAME *</label>
+            <input type="text" id="inp-name" placeholder="Your full name" class="form-input">
+
+            <!-- Contact: cannot be empty, numbers only, max 15 digits -->
+            <label class="form-label">CONTACT NUMBER *</label>
+            <input type="text" id="inp-contact" placeholder="998901234567" class="form-input">
+
+            <!-- Email: validated with a pattern -->
+            <label class="form-label">EMAIL ADDRESS *</label>
+            <input type="text" id="inp-email" placeholder="you@example.com" class="form-input">
+
+            <!-- Home address: free text, no validation required -->
+            <label class="form-label">HOME ADDRESS</label>
+            <textarea id="inp-address" placeholder="Street, building, apartment..." class="form-textarea"></textarea>
+
+            <!-- Membership status: radio, must be checked -->
+            <label class="form-label">STATUS MEMBERSHIP *</label>
+            <div class="choice-row">
+                <label class="choice-option">
+                    <input type="radio" name="membership" value="Member"> Member
+                </label>
+                <label class="choice-option">
+                    <input type="radio" name="membership" value="Non-Member"> Non-Member
+                </label>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- ── MENU SELECTION ── -->
+            <p class="block-label">Menu Selection</p>
+            <svg width="160" height="14" viewBox="0 0 160 14" class="block-ornament">
+                <line x1="0" y1="7" x2="64" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+                <polygon points="80,2 86,7 80,12 74,7" fill="#C4A882" opacity="0.7"/>
+                <line x1="96" y1="7" x2="160" y2="7" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+            </svg>
+
+            <!-- Product 1: required -->
+            <label class="form-label">PRODUCT 1 * &nbsp;/&nbsp; QUANTITY</label>
+            <div class="product-row">
+                <div class="product-select-cell">
+                    <select id="inp-product1" class="form-select">
+                        <option value="">-- Choose a menu --</option>
+                        <option value="Wedding Plov|120000">Wedding Plov &mdash; 120,000 UZS</option>
+                        <option value="Tandir Gosht|150000">Tandir Gosht &mdash; 150,000 UZS</option>
+                        <option value="Tandir Chicken|130000">Tandir Chicken &mdash; 130,000 UZS</option>
+                        <option value="Mastava|60000">Mastava &mdash; 60,000 UZS</option>
+                        <option value="Tandir Shurva|93000">Tandir Shurva &mdash; 93,000 UZS</option>
+                        <option value="Samsa with Lamb|25000">Samsa with Lamb &mdash; 25,000 UZS</option>
+                        <option value="Achichuk|45000">Achichuk &mdash; 45,000 UZS</option>
+                        <option value="Suzma with Eggplant|55000">Suzma with Eggplant &mdash; 55,000 UZS</option>
+                        <option value="Green Tea|15000">Green Tea &mdash; 15,000 UZS</option>
+                        <option value="Fresh Juice|25000">Fresh Juice &mdash; 25,000 UZS</option>
+                        <option value="Limonchello|20000">Limonchello &mdash; 20,000 UZS</option>
+                    </select>
+                </div>
+                <div class="product-qty-cell">
+                    <input type="number" id="inp-qty1" value="1" min="1" max="20" class="form-qty">
+                </div>
+            </div>
+
+            <!-- Product 2: optional -->
+            <label class="form-label">PRODUCT 2 &nbsp;/&nbsp; QUANTITY</label>
+            <div class="product-row">
+                <div class="product-select-cell">
+                    <select id="inp-product2" class="form-select">
+                        <option value="">-- Optional --</option>
+                        <option value="Wedding Plov|120000">Wedding Plov &mdash; 120,000 UZS</option>
+                        <option value="Tandir Gosht|150000">Tandir Gosht &mdash; 150,000 UZS</option>
+                        <option value="Tandir Chicken|130000">Tandir Chicken &mdash; 130,000 UZS</option>
+                        <option value="Mastava|60000">Mastava &mdash; 60,000 UZS</option>
+                        <option value="Tandir Shurva|93000">Tandir Shurva &mdash; 93,000 UZS</option>
+                        <option value="Samsa with Lamb|25000">Samsa with Lamb &mdash; 25,000 UZS</option>
+                        <option value="Achichuk|45000">Achichuk &mdash; 45,000 UZS</option>
+                        <option value="Suzma with Eggplant|55000">Suzma with Eggplant &mdash; 55,000 UZS</option>
+                        <option value="Green Tea|15000">Green Tea &mdash; 15,000 UZS</option>
+                        <option value="Fresh Juice|25000">Fresh Juice &mdash; 25,000 UZS</option>
+                        <option value="Limonchello|20000">Limonchello &mdash; 20,000 UZS</option>
+                    </select>
+                </div>
+                <div class="product-qty-cell">
+                    <input type="number" id="inp-qty2" value="1" min="1" max="20" class="form-qty">
+                </div>
+            </div>
+
+            <!-- Product 3: optional -->
+            <label class="form-label">PRODUCT 3 &nbsp;/&nbsp; QUANTITY</label>
+            <div class="product-row">
+                <div class="product-select-cell">
+                    <select id="inp-product3" class="form-select">
+                        <option value="">-- Optional --</option>
+                        <option value="Wedding Plov|120000">Wedding Plov &mdash; 120,000 UZS</option>
+                        <option value="Tandir Gosht|150000">Tandir Gosht &mdash; 150,000 UZS</option>
+                        <option value="Tandir Chicken|130000">Tandir Chicken &mdash; 130,000 UZS</option>
+                        <option value="Mastava|60000">Mastava &mdash; 60,000 UZS</option>
+                        <option value="Tandir Shurva|93000">Tandir Shurva &mdash; 93,000 UZS</option>
+                        <option value="Samsa with Lamb|25000">Samsa with Lamb &mdash; 25,000 UZS</option>
+                        <option value="Achichuk|45000">Achichuk &mdash; 45,000 UZS</option>
+                        <option value="Suzma with Eggplant|55000">Suzma with Eggplant &mdash; 55,000 UZS</option>
+                        <option value="Green Tea|15000">Green Tea &mdash; 15,000 UZS</option>
+                        <option value="Fresh Juice|25000">Fresh Juice &mdash; 25,000 UZS</option>
+                        <option value="Limonchello|20000">Limonchello &mdash; 20,000 UZS</option>
+                    </select>
+                </div>
+                <div class="product-qty-cell">
+                    <input type="number" id="inp-qty3" value="1" min="1" max="20" class="form-qty">
+                </div>
+            </div>
+
+            <!-- Booking date -->
+            <label class="form-label">DATE BOOKING</label>
+            <input type="date" id="inp-date" class="form-input">
+
+            <!-- Additional request: free text -->
+            <label class="form-label">ADDITIONAL REQUEST</label>
+            <textarea id="inp-request" placeholder="Any dietary requirements or special occasions..." class="form-textarea"></textarea>
+
+            <!-- Clarification checkbox: must be ticked -->
+            <div class="choice-row">
+                <label class="choice-option">
+                    <input type="checkbox" id="inp-clarify">
+                    I confirm that all the information provided above is correct. *
+                </label>
+            </div>
+
+            <!-- Submit runs all validation, Clear resets the form -->
+            <button class="form-btn" onclick="submitOrder()">SUBMIT ORDER</button>
+            <button class="clear-btn" onclick="clearForm()">CLEAR FORM</button>
+
+        </div>
+    </section>
+
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h3 class="footer-logo">QISSA</h3>
+        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+        <div class="footer-divider"></div>
+        <table class="footer-table">
+            <tr>
+                <td class="footer-cell">
+                    <p class="footer-label">VISIT US</p>
+                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                </td>
+                <td class="footer-cell">
+                    <p class="footer-label">CONTACT</p>
+                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                </td>
+                <td class="footer-cell-last">
+                    <p class="footer-label">HOURS</p>
+                    <p class="footer-info">Mon&ndash;Fri: 12:00 &ndash; 23:00<br>Sat&ndash;Sun: 10:00 &ndash; 23:00</p>
+                </td>
+            </tr>
+        </table>
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- ====== JAVASCRIPT: FORM VALIDATION ====== -->
+    <script>
+
+        // ---- Pre-select product when arriving from a promotion card ----
+        // The promotion cards on the homepage pass ?item=DishName in the URL.
+        var params = new URLSearchParams(window.location.search);
+        var promoItem = params.get('item');
+
+        if (promoItem) {
+            var select1 = document.getElementById('inp-product1');
+            for (var i = 0; i < select1.options.length; i++) {
+                if (select1.options[i].value.indexOf(promoItem + '|') === 0) {
+                    select1.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // ---- VALIDATION FUNCTIONS ----
+
+        // Name: cannot be empty and cannot contain any digits
+        function validateName(name) {
+            if (name === '') {
+                alert('Name cannot be empty.');
+                return false;
+            }
+            if (/[0-9]/.test(name)) {
+                alert('Name cannot contain numbers.');
+                return false;
+            }
+            return true;
+        }
+
+        // Contact: cannot be empty, digits only, length no more than 15
+        function validateContact(contact) {
+            if (contact === '') {
+                alert('Contact number cannot be empty.');
+                return false;
+            }
+            if (!/^[0-9]+$/.test(contact)) {
+                alert('Contact number must contain numbers only.');
+                return false;
+            }
+            if (contact.length > 15) {
+                alert('Contact number cannot be longer than 15 digits.');
+                return false;
+            }
+            return true;
+        }
+
+        // Email: must match a standard email pattern
+        function validateEmail(email) {
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!pattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            return true;
+        }
+
+        // Membership: one radio option must be selected
+        function validateMembership() {
+            var radios = document.getElementsByName('membership');
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    return true;
+                }
+            }
+            alert('Please select your membership status.');
+            return false;
+        }
+
+        // Product 1: cannot be empty
+        function validateProduct1(value) {
+            if (value === '') {
+                alert('Please choose at least one menu (Product 1).');
+                return false;
+            }
+            return true;
+        }
+
+        // Date booking: if a date is entered it cannot be in the past.
+        // Today and future dates are allowed.
+        function validateDate(dateValue) {
+            if (dateValue === '') {
+                return true; // date is optional
+            }
+            var chosen = new Date(dateValue);
+            var today = new Date();
+            // Reset time so we compare calendar days only
+            today.setHours(0, 0, 0, 0);
+            chosen.setHours(0, 0, 0, 0);
+            if (chosen < today) {
+                alert('The date is entered incorrectly. Please choose today or a future date.');
+                return false;
+            }
+            return true;
+        }
+
+        // Clarification checkbox: must be ticked before submitting
+        function validateClarification() {
+            if (!document.getElementById('inp-clarify').checked) {
+                alert('Please confirm that your information is correct.');
+                return false;
+            }
+            return true;
+        }
+
+        // ---- SUBMIT ----
+        // Runs every validation in order. If everything passes:
+        // shows the required alert, saves the order and opens the receipt.
+        function submitOrder() {
+
+            var name     = document.getElementById('inp-name').value.trim();
+            var contact  = document.getElementById('inp-contact').value.trim();
+            var email    = document.getElementById('inp-email').value.trim();
+            var address  = document.getElementById('inp-address').value.trim();
+            var date     = document.getElementById('inp-date').value;
+            var request  = document.getElementById('inp-request').value.trim();
+
+            var p1 = document.getElementById('inp-product1').value;
+            var p2 = document.getElementById('inp-product2').value;
+            var p3 = document.getElementById('inp-product3').value;
+
+            var q1 = parseInt(document.getElementById('inp-qty1').value) || 1;
+            var q2 = parseInt(document.getElementById('inp-qty2').value) || 1;
+            var q3 = parseInt(document.getElementById('inp-qty3').value) || 1;
+
+            // Run each validation; stop at the first failure
+            if (!validateName(name))        { return; }
+            if (!validateContact(contact))  { return; }
+            if (!validateEmail(email))      { return; }
+            if (!validateMembership())      { return; }
+            if (!validateProduct1(p1))      { return; }
+            if (!validateDate(date))        { return; }
+            if (!validateClarification())   { return; }
+
+            // Read which membership option was chosen
+            var membership = '';
+            var radios = document.getElementsByName('membership');
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    membership = radios[i].value;
+                }
+            }
+
+            // Build the list of ordered products (name, price, qty)
+            var products = [];
+
+            function addProduct(value, qty) {
+                if (value !== '') {
+                    var parts = value.split('|');
+                    products.push({
+                        name: parts[0],
+                        price: parseInt(parts[1]),
+                        qty: qty
+                    });
+                }
+            }
+
+            addProduct(p1, q1);
+            addProduct(p2, q2);
+            addProduct(p3, q3);
+
+            // Save the whole order for the receipt page
+            var order = {
+                name: name,
+                contact: contact,
+                email: email,
+                address: address,
+                membership: membership,
+                date: date,
+                request: request,
+                products: products
+            };
+
+            localStorage.setItem('qissa_order', JSON.stringify(order));
+
+            // Required alert on successful submission
+            alert('Submission Accepted.');
+
+            // Display the receipt
+            window.location.href = 'receipt.html';
+        }
+
+        // ---- CLEAR ----
+        // Resets every field in the form back to its default state
+        function clearForm() {
+            document.getElementById('inp-name').value = '';
+            document.getElementById('inp-contact').value = '';
+            document.getElementById('inp-email').value = '';
+            document.getElementById('inp-address').value = '';
+            document.getElementById('inp-date').value = '';
+            document.getElementById('inp-request').value = '';
+
+            document.getElementById('inp-product1').selectedIndex = 0;
+            document.getElementById('inp-product2').selectedIndex = 0;
+            document.getElementById('inp-product3').selectedIndex = 0;
+
+            document.getElementById('inp-qty1').value = 1;
+            document.getElementById('inp-qty2').value = 1;
+            document.getElementById('inp-qty3').value = 1;
+
+            var radios = document.getElementsByName('membership');
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].checked = false;
+            }
+
+            document.getElementById('inp-clarify').checked = false;
+        }
+
+    </script>
+
+</body>
+</html>

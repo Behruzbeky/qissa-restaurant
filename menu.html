@@ -6,479 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QISSA — Menu</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- ====== EMBEDDED CSS ====== -->
-    <style>
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0A0502;
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            color: #F0E4C8;
-        }
-
-        header {
-            background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
-            text-align: center;
-            padding: 52px 20px 44px 20px;
-            border-bottom: 1px solid #2A1A08;
-        }
-
-        .header-stars {
-            color: #C4A882;
-            font-size: 11px;
-            letter-spacing: 6px;
-            margin: 0 0 18px 0;
-        }
-
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 72px;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin: 0 0 6px 0;
-            letter-spacing: 18px;
-            text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
-                         -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
-        }
-
-        .tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 800;
-            font-style: italic;
-            color: #9A7B5A;
-            font-size: 18px;
-            margin: 0;
-            letter-spacing: 3px;
-        }
-
-        nav {
-            background-color: rgba(8, 4, 2, 0.92);
-            text-align: center;
-            padding: 16px 0;
-            border-bottom: 1px solid #C4A882;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 300;
-            color: #C4A882;
-            text-decoration: none;
-            margin: 0 22px;
-            font-size: 13px;
-            letter-spacing: 4px;
-        }
-
-        .cart-nav-btn {
-            position: absolute;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-family: 'Raleway', sans-serif;
-            font-weight: 400;
-            font-size: 12px;
-            color: #080402;
-            background-color: #C4A882;
-            text-decoration: none;
-            padding: 7px 18px;
-            letter-spacing: 2px;
-            cursor: pointer;
-            border: none;
-        }
-
-        .cart-count {
-            background-color: #8B2C12;
-            color: #FFFFFF;
-            border-radius: 50%;
-            padding: 2px 7px;
-            font-size: 11px;
-            margin-left: 4px;
-        }
-
-        /* Menu section — generous vertical breathing room */
-        .menu-section {
-            padding: 110px 80px;
-            background-color: #0A0502;
-        }
-
-        /* Large white section heading — premium feel */
-        .section-heading {
-            font-family: 'Cinzel', serif;
-            text-align: center;
-            color: #FFFFFF;
-            font-size: 44px;
-            font-weight: 400;
-            letter-spacing: 8px;
-            margin: 0 0 14px 0;
-        }
-
-        /* Small muted gold subtitle */
-        .section-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            text-align: center;
-            color: #9A7B5A;
-            font-size: 18px;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-
-        /* Category label — refined, centered, spaced */
-        .category-label {
-            font-family: 'Cinzel', serif;
-            text-align: center;
-            color: #C4A882;
-            font-size: 15px;
-            letter-spacing: 6px;
-            margin: 90px 0 50px 0;
-        }
-
-        .menu-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 0;
-        }
-
-        /* Image with no border — clean */
-        .gallery-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-            filter: brightness(0.82);
-            transition: filter 0.3s;
-        }
-
-        .gallery-img:hover {
-            filter: brightness(1);
-        }
-
-        /* Dish info — no border, separated by space */
-        .dish-info {
-            padding: 22px 8px 0 8px;
-            text-align: center;
-        }
-
-        .dish-name {
-            font-family: 'Cinzel', serif;
-            color: #FFFFFF;
-            font-size: 17px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            margin: 0 0 8px 0;
-        }
-
-        .dish-price {
-            font-family: 'Cormorant Garamond', serif;
-            color: #C4A882;
-            font-size: 17px;
-            letter-spacing: 1px;
-            margin: 0 0 18px 0;
-        }
-
-        /* Minimal text button */
-        .add-btn {
-            background-color: transparent;
-            color: #9A7B5A;
-            border: none;
-            border-bottom: 1px solid #3A2810;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 400;
-            font-size: 11px;
-            letter-spacing: 3px;
-            padding: 6px 4px;
-            cursor: pointer;
-            transition: color 0.3s, border-color 0.3s;
-        }
-
-        .add-btn:hover {
-            color: #C4A882;
-            border-color: #C4A882;
-        }
-
-        /* Drinks — elegant text cards, no emoji, no border */
-        .drink-card {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .drink-name {
-            font-family: 'Cinzel', serif;
-            color: #FFFFFF;
-            font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 4px;
-            margin: 0 0 10px 0;
-        }
-
-        .drink-desc {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: #7A6040;
-            font-size: 15px;
-            margin: 0 0 14px 0;
-        }
-
-        .drink-price {
-            font-family: 'Cormorant Garamond', serif;
-            color: #C4A882;
-            font-size: 16px;
-            margin: 0 0 18px 0;
-        }
-
-        /* ---- CART SIDEBAR ---- */
-        .cart-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            z-index: 2000;
-        }
-
-        .cart-panel {
-            position: fixed;
-            top: 0; right: 0;
-            width: 390px;
-            height: 100%;
-            background-color: #0A0502;
-            border-left: 1px solid #2A1A08;
-            z-index: 2001;
-            overflow-y: auto;
-            padding: 40px 34px;
-            box-sizing: border-box;
-        }
-
-        .cart-title {
-            font-family: 'Cinzel', serif;
-            color: #FFFFFF;
-            font-size: 18px;
-            letter-spacing: 5px;
-            margin: 0 0 30px 0;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #2A1A08;
-        }
-
-        .cart-close {
-            position: absolute;
-            top: 28px; right: 30px;
-            font-size: 22px;
-            color: #C4A882;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: Arial, sans-serif;
-        }
-
-        .cart-item {
-            border-bottom: 1px solid #1A0E04;
-            padding: 18px 0;
-        }
-
-        .cart-item-name {
-            font-family: 'Cinzel', serif;
-            color: #F0E4C8;
-            font-size: 13px;
-            letter-spacing: 2px;
-            margin: 0 0 10px 0;
-        }
-
-        .cart-item-row {
-            display: table;
-            width: 100%;
-        }
-
-        .cart-item-left {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .cart-item-right {
-            display: table-cell;
-            text-align: right;
-            vertical-align: middle;
-        }
-
-        .cart-item-price {
-            font-family: 'Cormorant Garamond', serif;
-            color: #C4A882;
-            font-size: 15px;
-            margin: 0;
-        }
-
-        .qty-btn {
-            background-color: transparent;
-            border: 1px solid #3A2810;
-            color: #C4A882;
-            width: 28px;
-            height: 28px;
-            font-size: 15px;
-            cursor: pointer;
-            font-family: Arial, sans-serif;
-        }
-
-        .qty-display {
-            font-family: 'Cinzel', serif;
-            color: #F0E4C8;
-            font-size: 14px;
-            margin: 0 10px;
-        }
-
-        .remove-btn {
-            background: none;
-            border: none;
-            color: #8B2C12;
-            font-size: 16px;
-            cursor: pointer;
-            margin-left: 12px;
-        }
-
-        .cart-total {
-            font-family: 'Cinzel', serif;
-            color: #FFFFFF;
-            font-size: 16px;
-            letter-spacing: 2px;
-            margin: 26px 0;
-            padding-top: 20px;
-            border-top: 1px solid #C4A882;
-        }
-
-        .cart-empty {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: #5A3A1A;
-            font-size: 16px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            padding: 15px;
-            background-color: #C4A882;
-            color: #080402;
-            border: none;
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            font-size: 12px;
-            letter-spacing: 3px;
-            cursor: pointer;
-        }
-
-        .toast {
-            display: none;
-            position: fixed;
-            bottom: 36px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #0A0502;
-            border: 1px solid #C4A882;
-            color: #C4A882;
-            font-family: 'Cinzel', serif;
-            font-size: 12px;
-            letter-spacing: 2px;
-            padding: 14px 32px;
-            z-index: 3000;
-        }
-
-        /* ---- LIGHTBOX ---- */
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.94);
-            z-index: 9999;
-            text-align: center;
-        }
-
-        .lightbox-img {
-            max-width: 80%;
-            max-height: 78vh;
-            margin-top: 70px;
-        }
-
-        .lightbox-caption {
-            font-family: 'Cinzel', serif;
-            color: #C4A882;
-            font-size: 14px;
-            letter-spacing: 4px;
-            margin-top: 24px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 30px; right: 40px;
-            font-size: 30px;
-            color: #C4A882;
-            cursor: pointer;
-            font-family: Arial, sans-serif;
-        }
-
-        footer {
-            background-color: #030201;
-            padding: 60px 60px 30px 60px;
-            border-top: 1px solid #2A1A08;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 32px;
-            font-weight: 600;
-            color: #E8E0D0;
-            margin: 0 0 4px 0;
-            letter-spacing: 12px;
-        }
-
-        .footer-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: #FFFFFF;
-            font-size: 15px;
-            margin: 0 0 30px 0;
-            letter-spacing: 2px;
-        }
-
-        .footer-label {
-            font-family: 'Cinzel', serif;
-            color: #C4A882;
-            font-size: 15px;
-            letter-spacing: 3px;
-            margin: 0 0 14px 0;
-        }
-
-        .footer-info {
-            font-family: 'Cormorant Garamond', serif;
-            color: #9A8060;
-            font-size: 15px;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .footer-copy {
-            font-family: 'Cormorant Garamond', serif;
-            color: #6A5040;
-            font-size: 13px;
-            margin: 0;
-        }
-
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
     <!-- ====== HEADER ====== -->
     <header>
-        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
         <h1 class="logo">QISSA</h1>
-        <svg width="280" height="16" viewBox="0 0 280 16" style="display: block; margin: 10px auto 14px auto;">
+        <svg width="280" height="16" viewBox="0 0 280 16" class="logo-ornament">
             <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
             <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
             <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
@@ -487,11 +28,12 @@
     </header>
 
 
-    <!-- ====== NAVIGATION ====== -->
-    <nav style="position: relative;">
+    <!-- ====== NAVIGATION with cart button ====== -->
+    <nav class="nav-with-cart">
         <a href="index.html">HOME</a>
         <a href="menu.html">MENU</a>
         <a href="about.html">ABOUT US</a>
+        <a href="ordering.html">ORDER</a>
         <a href="contact.html">CONTACT</a>
         <button class="cart-nav-btn" onclick="openCart()">
             CART <span class="cart-count" id="cart-count">0</span>
@@ -501,7 +43,7 @@
 
     <!-- ====== LIGHTBOX ====== -->
     <div class="lightbox-overlay" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <span class="lightbox-close" onclick="closeLightbox()">&#10005;</span>
         <img class="lightbox-img" id="lightbox-img" src="" alt="">
         <p class="lightbox-caption" id="lightbox-caption"></p>
     </div>
@@ -509,9 +51,8 @@
 
     <!-- ====== CART SIDEBAR ====== -->
     <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
-
-    <div class="cart-panel" id="cart-panel" style="display: none;">
-        <button class="cart-close" onclick="closeCart()">✕</button>
+    <div class="cart-panel" id="cart-panel">
+        <button class="cart-close" onclick="closeCart()">&#10005;</button>
         <h3 class="cart-title">YOUR ORDER</h3>
         <div id="cart-items-list"></div>
         <div id="cart-total-box"></div>
@@ -528,12 +69,11 @@
         <h2 class="section-heading">Our Menu</h2>
         <p class="section-sub">Traditional recipes from the heart of Tashkent</p>
 
-
         <!-- ── MAIN DISHES ── -->
         <p class="category-label">MAIN DISHES</p>
         <table class="menu-table">
             <tr>
-                <td style="width: 33%; padding: 0 18px 0 0; vertical-align: top;">
+                <td class="menu-cell-3">
                     <img src="Images/plov.jpg" alt="Wedding Plov" class="gallery-img"
                          onclick="openLightbox('Images/plov.jpg', 'Wedding Plov')">
                     <div class="dish-info">
@@ -542,7 +82,7 @@
                         <button class="add-btn" onclick="addToCart('Wedding Plov', 120000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 33%; padding: 0 9px; vertical-align: top;">
+                <td class="menu-cell-3">
                     <img src="Images/gosht.jpg" alt="Tandir Gosht" class="gallery-img"
                          onclick="openLightbox('Images/gosht.jpg', 'Tandir Gosht')">
                     <div class="dish-info">
@@ -551,7 +91,7 @@
                         <button class="add-btn" onclick="addToCart('Tandir Gosht', 150000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 33%; padding: 0 0 0 18px; vertical-align: top;">
+                <td class="menu-cell-3">
                     <img src="Images/chicken.jpg" alt="Tandir Chicken" class="gallery-img"
                          onclick="openLightbox('Images/chicken.jpg', 'Tandir Chicken')">
                     <div class="dish-info">
@@ -563,12 +103,11 @@
             </tr>
         </table>
 
-
         <!-- ── SOUPS ── -->
         <p class="category-label">SOUPS</p>
         <table class="menu-table">
             <tr>
-                <td style="width: 50%; padding: 0 18px 0 0; vertical-align: top;">
+                <td class="menu-cell-2">
                     <img src="Images/mastava.jpg" alt="Mastava" class="gallery-img"
                          onclick="openLightbox('Images/mastava.jpg', 'Mastava')">
                     <div class="dish-info">
@@ -577,7 +116,7 @@
                         <button class="add-btn" onclick="addToCart('Mastava', 60000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 50%; padding: 0 0 0 18px; vertical-align: top;">
+                <td class="menu-cell-2">
                     <img src="Images/shurva.jpg" alt="Tandir Shurva" class="gallery-img"
                          onclick="openLightbox('Images/shurva.jpg', 'Tandir Shurva')">
                     <div class="dish-info">
@@ -589,12 +128,11 @@
             </tr>
         </table>
 
-
         <!-- ── SAMSA & SALADS ── -->
-        <p class="category-label">SAMSA & SALADS</p>
+        <p class="category-label">SAMSA &amp; SALADS</p>
         <table class="menu-table">
             <tr>
-                <td style="width: 33%; padding: 0 18px 0 0; vertical-align: top;">
+                <td class="menu-cell-3">
                     <img src="Images/samsa_lamb.jpg" alt="Samsa with Lamb" class="gallery-img"
                          onclick="openLightbox('Images/samsa_lamb.jpg', 'Samsa with Lamb')">
                     <div class="dish-info">
@@ -603,7 +141,7 @@
                         <button class="add-btn" onclick="addToCart('Samsa with Lamb', 25000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 33%; padding: 0 9px; vertical-align: top;">
+                <td class="menu-cell-3">
                     <img src="Images/achichuk.jpg" alt="Achichuk" class="gallery-img"
                          onclick="openLightbox('Images/achichuk.jpg', 'Achichuk')">
                     <div class="dish-info">
@@ -612,7 +150,7 @@
                         <button class="add-btn" onclick="addToCart('Achichuk', 45000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 33%; padding: 0 0 0 18px; vertical-align: top;">
+                <td class="menu-cell-3">
                     <img src="Images/suzma.jpg" alt="Suzma with Eggplant" class="gallery-img"
                          onclick="openLightbox('Images/suzma.jpg', 'Suzma with Eggplant')">
                     <div class="dish-info">
@@ -624,33 +162,31 @@
             </tr>
         </table>
 
-
-        <!-- ── DRINKS ── -->
-        <!-- Elegant text-based drink cards, no emoji for a refined look -->
+        <!-- ── DRINKS: minimalist text cards without photos ── -->
         <p class="category-label">DRINKS</p>
         <table class="menu-table">
             <tr>
-                <td style="width: 33%; vertical-align: top;">
+                <td class="menu-cell-3">
                     <div class="drink-card">
                         <p class="drink-name">Green Tea</p>
                         <p class="drink-desc">Traditional Uzbek kok choy, served in a piala</p>
-                        <p class="drink-price">15,000 UZS</p>
+                        <p class="dish-price">15,000 UZS</p>
                         <button class="add-btn" onclick="addToCart('Green Tea', 15000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 33%; vertical-align: top;">
+                <td class="menu-cell-3">
                     <div class="drink-card">
                         <p class="drink-name">Fresh Juice</p>
                         <p class="drink-desc">Seasonal fruit, freshly pressed to order</p>
-                        <p class="drink-price">25,000 UZS</p>
+                        <p class="dish-price">25,000 UZS</p>
                         <button class="add-btn" onclick="addToCart('Fresh Juice', 25000)">ADD TO ORDER</button>
                     </div>
                 </td>
-                <td style="width: 33%; vertical-align: top;">
+                <td class="menu-cell-3">
                     <div class="drink-card">
                         <p class="drink-name">Limonchello</p>
                         <p class="drink-desc">House lemon drink with mint and honey</p>
-                        <p class="drink-price">20,000 UZS</p>
+                        <p class="dish-price">20,000 UZS</p>
                         <button class="add-btn" onclick="addToCart('Limonchello', 20000)">ADD TO ORDER</button>
                     </div>
                 </td>
@@ -662,59 +198,50 @@
 
     <!-- ====== FOOTER ====== -->
     <footer>
-        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
         <h3 class="footer-logo">QISSA</h3>
         <p class="footer-tagline">Where Every Dish Tells a Story</p>
-        <div style="border-top: 1px solid #2A1A08; margin-bottom: 40px;"></div>
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+        <div class="footer-divider"></div>
+        <table class="footer-table">
             <tr>
-                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                <td class="footer-cell">
                     <p class="footer-label">VISIT US</p>
                     <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
                 </td>
-                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
+                <td class="footer-cell">
                     <p class="footer-label">CONTACT</p>
                     <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
                 </td>
-                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top;">
+                <td class="footer-cell-last">
                     <p class="footer-label">HOURS</p>
-                    <p class="footer-info">Mon–Fri: 12:00 – 23:00<br>Sat–Sun: 10:00 – 23:00</p>
+                    <p class="footer-info">Mon&ndash;Fri: 12:00 &ndash; 23:00<br>Sat&ndash;Sun: 10:00 &ndash; 23:00</p>
                 </td>
             </tr>
         </table>
-        <div style="border-top: 1px solid #1A0E04; padding-top: 24px;">
+        <div class="footer-bottom">
             <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
         </div>
     </footer>
 
 
-    <!-- ====== JAVASCRIPT ====== -->
+    <!-- ====== JAVASCRIPT: cart + lightbox ====== -->
     <script>
 
-        // ---- CART SYSTEM ----
-        // Cart stored in localStorage so it persists across pages
+        // Cart persists between pages via localStorage
         var cart = JSON.parse(localStorage.getItem('qissa_cart')) || [];
 
         function updateCartCount() {
             var total = 0;
-            for (var i = 0; i < cart.length; i++) {
-                total += cart[i].qty;
-            }
+            for (var i = 0; i < cart.length; i++) { total += cart[i].qty; }
             document.getElementById('cart-count').innerText = total;
         }
 
         function addToCart(name, price) {
             var found = false;
             for (var i = 0; i < cart.length; i++) {
-                if (cart[i].name === name) {
-                    cart[i].qty += 1;
-                    found = true;
-                    break;
-                }
+                if (cart[i].name === name) { cart[i].qty += 1; found = true; break; }
             }
-            if (!found) {
-                cart.push({ name: name, price: price, qty: 1 });
-            }
+            if (!found) { cart.push({ name: name, price: price, qty: 1 }); }
             localStorage.setItem('qissa_cart', JSON.stringify(cart));
             updateCartCount();
             showToast(name + ' added to order');
@@ -729,10 +256,7 @@
 
         function changeQty(index, delta) {
             cart[index].qty += delta;
-            if (cart[index].qty <= 0) {
-                removeFromCart(index);
-                return;
-            }
+            if (cart[index].qty <= 0) { removeFromCart(index); return; }
             localStorage.setItem('qissa_cart', JSON.stringify(cart));
             updateCartCount();
             renderCart();
@@ -760,10 +284,10 @@
                 html += '<p class="cart-item-name">' + item.name + '</p>';
                 html += '<div class="cart-item-row">';
                 html += '<div class="cart-item-left">';
-                html += '<button class="qty-btn" onclick="changeQty(' + i + ', -1)">−</button>';
+                html += '<button class="qty-btn" onclick="changeQty(' + i + ', -1)">&minus;</button>';
                 html += '<span class="qty-display">' + item.qty + '</span>';
                 html += '<button class="qty-btn" onclick="changeQty(' + i + ', 1)">+</button>';
-                html += '<button class="remove-btn" onclick="removeFromCart(' + i + ')">✕</button>';
+                html += '<button class="remove-btn" onclick="removeFromCart(' + i + ')">&#10005;</button>';
                 html += '</div>';
                 html += '<div class="cart-item-right">';
                 html += '<p class="cart-item-price">' + subtotal.toLocaleString() + ' UZS</p>';
@@ -775,7 +299,7 @@
             list.innerHTML = html;
             totalBox.innerHTML =
                 '<p class="cart-total">TOTAL: ' + grandTotal.toLocaleString() + ' UZS</p>' +
-                '<button class="checkout-btn" onclick="goToBooking()">PROCEED TO BOOKING →</button>';
+                '<button class="checkout-btn" onclick="goToOrdering()">PROCEED TO ORDER &#8594;</button>';
         }
 
         function openCart() {
@@ -789,20 +313,18 @@
             document.getElementById('cart-panel').style.display = 'none';
         }
 
-        function goToBooking() {
-            window.location.href = 'booking.html';
+        function goToOrdering() {
+            window.location.href = 'ordering.html';
         }
 
         function showToast(message) {
             var toast = document.getElementById('toast');
             toast.innerText = message;
             toast.style.display = 'block';
-            setTimeout(function() {
-                toast.style.display = 'none';
-            }, 2000);
+            setTimeout(function() { toast.style.display = 'none'; }, 2000);
         }
 
-        // ---- LIGHTBOX ----
+        // Lightbox: enlarge dish photo on click
         function openLightbox(src, caption) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox-caption').innerText = caption;
@@ -817,7 +339,6 @@
             if (e.target === this) { closeLightbox(); }
         });
 
-        // Initialize cart count on load
         updateCartCount();
 
     </script>

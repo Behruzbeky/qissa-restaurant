@@ -7,314 +7,182 @@
     <title>QISSA — Where Every Dish Tells a Story</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- ====== EMBEDDED CSS ====== -->
-    <!-- All styling is done here using embedded CSS as required by Assignment 2 -->
-    <style>
-
-        /* General body and page settings */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #120A04;
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            color: #F0E4C8;
-        }
-
-        /* Header section with gradient background */
-        header {
-            background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
-            text-align: center;
-            padding: 52px 20px 44px 20px;
-            border-bottom: 1px solid #2A1A08;
-        }
-
-        /* Small decorative stars above logo */
-        .header-stars {
-            color: #D4A843;
-            font-size: 11px;
-            letter-spacing: 6px;
-            margin: 0 0 18px 0;
-        }
-
-        /* Main QISSA logo text */
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 72px;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin: 0 0 6px 0;
-            letter-spacing: 18px;
-            text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
-                         -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
-        }
-
-        /* Tagline below logo */
-        .tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 800;
-            font-style: italic;
-            color: #9A7B5A;
-            font-size: 18px;
-            margin: 0;
-            letter-spacing: 3px;
-        }
-
-        /* Navigation bar - sticky so it stays at top while scrolling */
-        nav {
-            background-color: rgba(8, 4, 2, 0.92);
-            text-align: center;
-            padding: 16px 0;
-            border-bottom: 1px solid #C4A882;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        /* Navigation links */
-        nav a {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 300;
-            color: #D4A843;
-            text-decoration: none;
-            margin: 0 22px;
-            font-size: 13px;
-            letter-spacing: 4px;
-        }
-
-        /* Hero section - full screen with background image */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Hero background image layer */
-        .hero-image {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('Images/hero.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Dark overlay on top of hero image for text readability */
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, rgba(10,10,10,0.75) 100%);
-        }
-
-        /* Hero text container positioned over the image */
-        .hero-content {
-            position: relative;
-            text-align: center;
-            padding: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-top: 360px;
-        }
-
-        /* Small location text above main heading */
-        .hero-location {
-            font-family: 'Cinzel', serif;
-            color: #E8E0D0;
-            font-size: 11px;
-            letter-spacing: 6px;
-            margin: 0 0 24px 0;
-        }
-
-        /* Main hero heading */
-        .hero-heading {
-            font-family: 'Cinzel', serif;
-            color: #FFFFFF;
-            font-size: 52px;
-            font-weight: 600;
-            margin: 0 0 18px 0;
-            letter-spacing: 6px;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
-        }
-
-        /* Hero subheading italic text */
-        .hero-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: #E0D8C8;
-            font-size: 22px;
-            margin: 0 0 50px 0;
-            letter-spacing: 2px;
-            text-shadow: 0 1px 10px rgba(0,0,0,0.9);
-        }
-
-        /* Reserve a Table button in hero */
-        .hero-btn {
-            font-family: 'Cinzel', serif;
-            color: #080402;
-            background-color: #C4A882;
-            text-decoration: none;
-            padding: 16px 48px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            display: inline-block;
-        }
-
-        /* Footer styling */
-        footer {
-            background-color: #030201;
-            padding: 60px 60px 30px 60px;
-            border-top: 1px solid #2A1A08;
-            text-align: center;
-        }
-
-        /* Footer QISSA logo */
-        .footer-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 32px;
-            font-weight: 600;
-            color: #E8E0D0;
-            margin: 0 0 4px 0;
-            letter-spacing: 12px;
-            text-shadow: 0 1px 0 #E8E0D0, 0 2px 6px rgba(0,0,0,0.8);
-        }
-
-        /* Footer tagline */
-        .footer-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: #FFFFFF;
-            font-size: 15px;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        /* Footer info table columns */
-        .footer-label {
-            font-family: 'Cinzel', serif;
-            color: #D4A843;
-            font-size: 16px;
-            letter-spacing: 3px;
-            margin: 0 0 14px 0;
-        }
-
-        /* Footer info text */
-        .footer-info {
-            font-family: 'Cormorant Garamond', serif;
-            color: #9A8060;
-            font-size: 15px;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        /* Copyright line at bottom of footer */
-        .footer-copy {
-            font-family: 'Cormorant Garamond', serif;
-            color: #6A5040;
-            font-size: 13px;
-            margin: 0;
-        }
-
-        /* Gold divider line in footer */
-        .footer-divider {
-            border-top: 1px solid #2A1A08;
-            margin-bottom: 40px;
-        }
-
-    </style>
+    <!-- External CSS: all styling lives in one shared stylesheet -->
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
     <!-- ====== HEADER ====== -->
-    <!-- Contains restaurant logo, ornament and tagline -->
+    <!-- Restaurant logo, ornament and tagline -->
     <header>
-        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
-
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
         <h1 class="logo">QISSA</h1>
-
-        <!-- SVG ornamental divider line with diamond shape -->
-        <svg width="280" height="16" viewBox="0 0 280 16" style="display: block; margin: 10px auto 14px auto;">
+        <!-- SVG ornamental divider -->
+        <svg width="280" height="16" viewBox="0 0 280 16" class="logo-ornament">
             <line x1="0" y1="8" x2="120" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
             <polygon points="140,2 148,8 140,14 132,8" fill="none" stroke="#C4A882" stroke-width="0.8"/>
             <line x1="160" y1="8" x2="280" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.6"/>
         </svg>
-
         <p class="tagline">Where Every Dish Tells a Story</p>
     </header>
 
 
     <!-- ====== NAVIGATION ====== -->
-    <!-- Links to all pages of the website -->
+    <!-- Links to every page of the website -->
     <nav>
         <a href="index.html">HOME</a>
         <a href="menu.html">MENU</a>
         <a href="about.html">ABOUT US</a>
+        <a href="ordering.html">ORDER</a>
         <a href="contact.html">CONTACT</a>
     </nav>
 
 
     <!-- ====== HERO SECTION ====== -->
-    <!-- Full screen banner with food photo and welcome text -->
+    <!-- Full screen photo banner with welcome text -->
     <section class="hero">
-
         <!-- Background food photo -->
         <div class="hero-image"></div>
-
-        <!-- Semi-transparent dark overlay for text readability -->
+        <!-- Dark overlay so text stays readable -->
         <div class="hero-overlay"></div>
 
-        <!-- Text content over the photo -->
+        <!-- Hero text -->
         <div class="hero-content">
-            <p class="hero-location">— TASHKENT, UZBEKISTAN —</p>
-
+            <p class="hero-location">&mdash; TASHKENT, UZBEKISTAN &mdash;</p>
             <h2 class="hero-heading">Authentic Uzbek Cuisine</h2>
-
             <p class="hero-sub">Born in the Tandoor. Served with Soul.</p>
 
-            <!-- SVG ornament between text and button -->
-            <svg width="200" height="12" viewBox="0 0 200 12" style="display: block; margin: 0 auto 40px auto;">
+            <svg width="200" height="12" viewBox="0 0 200 12" class="hero-ornament">
                 <line x1="0" y1="6" x2="88" y2="6" stroke="#C4A882" stroke-width="0.8" opacity="0.7"/>
                 <circle cx="100" cy="6" r="3" fill="none" stroke="#C4A882" stroke-width="1"/>
                 <line x1="112" y1="6" x2="200" y2="6" stroke="#C4A882" stroke-width="0.8" opacity="0.7"/>
             </svg>
 
-            <!-- Button linking to contact/booking page -->
             <a href="contact.html" class="hero-btn">RESERVE A TABLE</a>
         </div>
     </section>
 
 
-    <!-- ====== FOOTER ====== -->
-    <!-- Address, contact details and copyright -->
-    <footer>
-        <p class="header-stars">✦ &nbsp; ✦ &nbsp; ✦</p>
-        <h3 class="footer-logo">QISSA</h3>
-        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+    <!-- ====== PROMOTION MENU SECTION ====== -->
+    <!-- Six promotional dishes with old and new prices.       -->
+    <!-- Organized with an HTML table; each card is clickable  -->
+    <!-- and takes the user to the Ordering page.              -->
+    <section class="promo-section">
 
-        <div class="footer-divider" style="margin-top: 30px;"></div>
+        <h2 class="section-heading">Special Promotions</h2>
+        <p class="section-sub">Limited time offers from our kitchen</p>
 
-        <!-- Three column info table -->
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
+        <svg width="200" height="16" viewBox="0 0 200 16" class="ornament">
+            <line x1="0" y1="8" x2="84" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+            <polygon points="100,3 106,8 100,13 94,8" fill="#C4A882" opacity="0.7"/>
+            <line x1="116" y1="8" x2="200" y2="8" stroke="#C4A882" stroke-width="0.6" opacity="0.4"/>
+        </svg>
+
+        <!-- Promo table: row 1 -->
+        <table class="promo-table">
             <tr>
-                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
-                    <p class="footer-label">VISIT US</p>
-                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                <td class="promo-cell">
+                    <!-- Clicking the card opens the Ordering page with this dish pre-selected -->
+                    <a href="ordering.html?item=Wedding Plov" class="promo-link">
+                        <img src="Images/plov.jpg" alt="Wedding Plov" class="promo-img">
+                        <div class="promo-info">
+                            <p class="promo-name">Wedding Plov</p>
+                            <span class="promo-old-price">140,000 UZS</span>
+                            <span class="promo-new-price">120,000 UZS</span><br>
+                            <span class="promo-tag">SAVE 20,000</span>
+                        </div>
+                    </a>
                 </td>
-                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top; border-right: 1px solid #2A1A08;">
-                    <p class="footer-label">CONTACT</p>
-                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                <td class="promo-cell">
+                    <a href="ordering.html?item=Tandir Gosht" class="promo-link">
+                        <img src="Images/gosht.jpg" alt="Tandir Gosht" class="promo-img">
+                        <div class="promo-info">
+                            <p class="promo-name">Tandir Gosht</p>
+                            <span class="promo-old-price">175,000 UZS</span>
+                            <span class="promo-new-price">150,000 UZS</span><br>
+                            <span class="promo-tag">SAVE 25,000</span>
+                        </div>
+                    </a>
                 </td>
-                <td style="width: 33%; padding: 0 20px; text-align: center; vertical-align: top;">
-                    <p class="footer-label">HOURS</p>
-                    <p class="footer-info">Mon–Fri: 12:00 – 23:00<br>Sat–Sun: 10:00 – 23:00</p>
+                <td class="promo-cell">
+                    <a href="ordering.html?item=Tandir Chicken" class="promo-link">
+                        <img src="Images/chicken.jpg" alt="Tandir Chicken" class="promo-img">
+                        <div class="promo-info">
+                            <p class="promo-name">Tandir Chicken</p>
+                            <span class="promo-old-price">155,000 UZS</span>
+                            <span class="promo-new-price">130,000 UZS</span><br>
+                            <span class="promo-tag">SAVE 25,000</span>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <!-- Promo table: row 2 -->
+            <tr>
+                <td class="promo-cell">
+                    <a href="ordering.html?item=Tandir Shurva" class="promo-link">
+                        <img src="Images/shurva.jpg" alt="Tandir Shurva" class="promo-img">
+                        <div class="promo-info">
+                            <p class="promo-name">Tandir Shurva</p>
+                            <span class="promo-old-price">110,000 UZS</span>
+                            <span class="promo-new-price">93,000 UZS</span><br>
+                            <span class="promo-tag">SAVE 17,000</span>
+                        </div>
+                    </a>
+                </td>
+                <td class="promo-cell">
+                    <a href="ordering.html?item=Samsa with Lamb" class="promo-link">
+                        <img src="Images/samsa_lamb.jpg" alt="Samsa with Lamb" class="promo-img">
+                        <div class="promo-info">
+                            <p class="promo-name">Samsa with Lamb</p>
+                            <span class="promo-old-price">30,000 UZS</span>
+                            <span class="promo-new-price">25,000 UZS</span><br>
+                            <span class="promo-tag">SAVE 5,000</span>
+                        </div>
+                    </a>
+                </td>
+                <td class="promo-cell">
+                    <a href="ordering.html?item=Suzma with Eggplant" class="promo-link">
+                        <img src="Images/suzma.jpg" alt="Suzma with Eggplant" class="promo-img">
+                        <div class="promo-info">
+                            <p class="promo-name">Suzma with Eggplant</p>
+                            <span class="promo-old-price">65,000 UZS</span>
+                            <span class="promo-new-price">55,000 UZS</span><br>
+                            <span class="promo-tag">SAVE 10,000</span>
+                        </div>
+                    </a>
                 </td>
             </tr>
         </table>
 
-        <div style="border-top: 1px solid #1A0E04; padding-top: 24px;">
+    </section>
+
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p class="header-stars">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+        <h3 class="footer-logo">QISSA</h3>
+        <p class="footer-tagline">Where Every Dish Tells a Story</p>
+        <div class="footer-divider"></div>
+        <table class="footer-table">
+            <tr>
+                <td class="footer-cell">
+                    <p class="footer-label">VISIT US</p>
+                    <p class="footer-info">Ukchi Street, 5<br>Tashkent, Uzbekistan</p>
+                </td>
+                <td class="footer-cell">
+                    <p class="footer-label">CONTACT</p>
+                    <p class="footer-info">+998 88 100-22-55<br>@tandiriy_uz</p>
+                </td>
+                <td class="footer-cell-last">
+                    <p class="footer-label">HOURS</p>
+                    <p class="footer-info">Mon&ndash;Fri: 12:00 &ndash; 23:00<br>Sat&ndash;Sun: 10:00 &ndash; 23:00</p>
+                </td>
+            </tr>
+        </table>
+        <div class="footer-bottom">
             <p class="footer-copy">&copy; 2026 QISSA Restaurant, Tashkent. All rights reserved.</p>
         </div>
     </footer>

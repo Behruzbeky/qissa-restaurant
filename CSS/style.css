@@ -1,0 +1,1488 @@
+/* ============================================================
+   QISSA RESTAURANT — MAIN STYLESHEET (External CSS)
+   Final Project G0302 — all pages share this single file
+   ============================================================ */
+
+/* ---------- GLOBAL ---------- */
+
+/* Base page settings shared by every page */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0A0502;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #F0E4C8;
+}
+
+/* ---------- HEADER (shared) ---------- */
+
+/* Top banner with restaurant logo */
+header {
+    background: linear-gradient(180deg, #030201 0%, #0D0704 60%, #080402 100%);
+    text-align: center;
+    padding: 52px 20px 44px 20px;
+    border-bottom: 1px solid #2A1A08;
+}
+
+/* Decorative stars above the logo */
+.header-stars {
+    color: #C4A882;
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin: 0 0 18px 0;
+}
+
+/* QISSA logo with gold outline effect */
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 6px 0;
+    letter-spacing: 18px;
+    text-shadow: -1px -1px 0 #8B6914, 1px -1px 0 #8B6914,
+                 -1px 1px 0 #8B6914, 1px 1px 0 #8B6914;
+}
+
+/* Italic tagline under the logo */
+.tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 800;
+    font-style: italic;
+    color: #9A7B5A;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+/* Ornament under the logo */
+.logo-ornament {
+    display: block;
+    margin: 10px auto 14px auto;
+}
+
+/* ---------- NAVIGATION (shared) ---------- */
+
+/* Sticky navigation bar */
+nav {
+    background-color: rgba(8, 4, 2, 0.92);
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #C4A882;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation links */
+nav a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #C4A882;
+    text-decoration: none;
+    margin: 0 22px;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+/* Nav wrapper when it holds the cart button */
+.nav-with-cart {
+    position: relative;
+}
+
+/* Cart button in the nav corner */
+.cart-nav-btn {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #080402;
+    background-color: #C4A882;
+    text-decoration: none;
+    padding: 7px 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Round badge with item count */
+.cart-count {
+    background-color: #8B2C12;
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+/* ---------- SECTION HEADINGS (shared) ---------- */
+
+/* Large white page heading */
+.section-heading {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    margin: 0 0 14px 0;
+}
+
+/* Gold italic subtitle */
+.section-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    text-align: center;
+    color: #C4A882;
+    font-size: 19px;
+    margin: 0 0 60px 0;
+}
+
+/* Centered SVG ornament divider */
+.ornament {
+    display: block;
+    margin: 0 auto 50px auto;
+}
+
+/* Small ornament used inside blocks */
+.block-ornament {
+    display: block;
+    margin: 0 auto 40px auto;
+}
+
+/* ---------- HERO (index page) ---------- */
+
+/* Full screen hero wrapper */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Background food photo layer */
+.hero-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../Images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Dark overlay for text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, rgba(10,10,10,0.75) 100%);
+}
+
+/* Text block positioned over the photo */
+.hero-content {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 360px;
+}
+
+/* Small location line */
+.hero-location {
+    font-family: 'Cinzel', serif;
+    color: #E8E0D0;
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin: 0 0 24px 0;
+}
+
+/* Big hero heading */
+.hero-heading {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 52px;
+    font-weight: 600;
+    margin: 0 0 18px 0;
+    letter-spacing: 6px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+}
+
+/* Italic hero subtitle */
+.hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #E0D8C8;
+    font-size: 22px;
+    margin: 0 0 50px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+}
+
+/* Ornament inside hero */
+.hero-ornament {
+    display: block;
+    margin: 0 auto 40px auto;
+}
+
+/* Gold call to action button */
+.hero-btn {
+    font-family: 'Cinzel', serif;
+    color: #080402;
+    background-color: #C4A882;
+    text-decoration: none;
+    padding: 16px 48px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    display: inline-block;
+}
+
+/* ---------- PROMOTION MENU (index page) ---------- */
+
+/* Promotion section wrapper */
+.promo-section {
+    padding: 110px 80px;
+    background-color: #0A0502;
+}
+
+/* Table that organizes the six promo cards */
+.promo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table cells around each promo card */
+.promo-cell {
+    width: 33%;
+    padding: 14px;
+    vertical-align: top;
+}
+
+/* Whole card is one clickable link */
+.promo-link {
+    text-decoration: none;
+    display: block;
+}
+
+/* Promo dish photo */
+.promo-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82);
+    transition: filter 0.3s;
+}
+
+.promo-link:hover .promo-img {
+    filter: brightness(1);
+}
+
+/* Text under promo photo */
+.promo-info {
+    padding: 20px 8px 30px 8px;
+    text-align: center;
+}
+
+/* Promo dish name */
+.promo-name {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+}
+
+/* Old price with strike-through */
+.promo-old-price {
+    font-family: 'Raleway', sans-serif;
+    color: #7A6040;
+    font-size: 13px;
+    text-decoration: line-through;
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+
+/* New discounted price in gold */
+.promo-new-price {
+    font-family: 'Cormorant Garamond', serif;
+    color: #D4A843;
+    font-size: 19px;
+    display: inline-block;
+    margin: 0;
+}
+
+/* Small discount tag */
+.promo-tag {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #8B2C12;
+    background-color: #F0E4C8;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+/* ---------- MENU PAGE ---------- */
+
+/* Menu section wrapper */
+.menu-section {
+    padding: 110px 80px;
+    background-color: #0A0502;
+}
+
+/* Centered category label */
+.category-label {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: #C4A882;
+    font-size: 15px;
+    letter-spacing: 6px;
+    margin: 90px 0 50px 0;
+}
+
+/* Table for menu cards */
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Menu table cells */
+.menu-cell-3 {
+    width: 33%;
+    padding: 0 12px;
+    vertical-align: top;
+}
+
+.menu-cell-2 {
+    width: 50%;
+    padding: 0 12px;
+    vertical-align: top;
+}
+
+/* Dish photo */
+.gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    filter: brightness(0.82);
+    transition: filter 0.3s;
+}
+
+.gallery-img:hover {
+    filter: brightness(1);
+}
+
+/* Minimalist drink card without a photo */
+.drink-card {
+    text-align: center;
+    padding: 55px 20px;
+    border-top: 1px solid #2A1A08;
+    border-bottom: 1px solid #2A1A08;
+}
+
+/* Drink name */
+.drink-name {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0 0 12px 0;
+}
+
+/* Short italic description */
+.drink-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #9A8060;
+    font-size: 15px;
+    margin: 0 0 16px 0;
+}
+
+/* Text block under each dish */
+.dish-info {
+    padding: 22px 8px 0 8px;
+    text-align: center;
+}
+
+/* Dish name */
+.dish-name {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 0 0 8px 0;
+}
+
+/* Dish price */
+.dish-price {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C4A882;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin: 0 0 18px 0;
+}
+
+/* Minimal add-to-order text button */
+.add-btn {
+    background-color: transparent;
+    color: #9A7B5A;
+    border: none;
+    border-bottom: 1px solid #3A2810;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 6px 4px;
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.add-btn:hover {
+    color: #C4A882;
+    border-color: #C4A882;
+}
+
+/* ---------- CART SIDEBAR (menu page) ---------- */
+
+.cart-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+
+.cart-panel {
+    display: none;
+    position: fixed;
+    top: 0; right: 0;
+    width: 390px;
+    height: 100%;
+    background-color: #0A0502;
+    border-left: 1px solid #2A1A08;
+    z-index: 2001;
+    overflow-y: auto;
+    padding: 40px 34px;
+    box-sizing: border-box;
+}
+
+.cart-title {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin: 0 0 30px 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #2A1A08;
+}
+
+.cart-close {
+    position: absolute;
+    top: 28px; right: 30px;
+    font-size: 22px;
+    color: #C4A882;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+.cart-item {
+    border-bottom: 1px solid #1A0E04;
+    padding: 18px 0;
+}
+
+.cart-item-name {
+    font-family: 'Cinzel', serif;
+    color: #F0E4C8;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+}
+
+.cart-item-row {
+    display: table;
+    width: 100%;
+}
+
+.cart-item-left {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cart-item-right {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cart-item-price {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C4A882;
+    font-size: 15px;
+    margin: 0;
+}
+
+.qty-btn {
+    background-color: transparent;
+    border: 1px solid #3A2810;
+    color: #C4A882;
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.qty-display {
+    font-family: 'Cinzel', serif;
+    color: #F0E4C8;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #8B2C12;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.cart-total {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 26px 0;
+    padding-top: 20px;
+    border-top: 1px solid #C4A882;
+}
+
+.cart-empty {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #5A3A1A;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #C4A882;
+    color: #080402;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+/* Toast notification */
+.toast {
+    display: none;
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0A0502;
+    border: 1px solid #C4A882;
+    color: #C4A882;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 14px 32px;
+    z-index: 3000;
+}
+
+/* ---------- LIGHTBOX (menu page) ---------- */
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.94);
+    z-index: 9999;
+    text-align: center;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 78vh;
+    margin-top: 70px;
+}
+
+.lightbox-caption {
+    font-family: 'Cinzel', serif;
+    color: #C4A882;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-top: 24px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px; right: 40px;
+    font-size: 30px;
+    color: #C4A882;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- ABOUT PAGE ---------- */
+
+.about-intro {
+    padding: 120px 80px 90px 80px;
+    text-align: center;
+    background-color: #0A0502;
+}
+
+.intro-statement {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    color: #E8DCC8;
+    font-size: 30px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-gold {
+    color: #C4A882;
+    font-style: italic;
+}
+
+.feature-image {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.78);
+}
+
+.split-section {
+    padding: 90px 80px;
+    background-color: #0A0502;
+}
+
+.split-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.split-text-cell {
+    width: 50%;
+    padding: 0 60px 0 0;
+    vertical-align: middle;
+}
+
+.split-img-cell {
+    width: 50%;
+    vertical-align: middle;
+}
+
+.split-text-heading {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 0 0 26px 0;
+}
+
+.split-text {
+    font-family: 'Cormorant Garamond', serif;
+    color: #C8C0B0;
+    font-size: 18px;
+    line-height: 1.9;
+    margin: 0 0 20px 0;
+}
+
+.split-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82);
+}
+
+.quote-section {
+    padding: 100px 80px;
+    text-align: center;
+    background: linear-gradient(180deg, #0A0502 0%, #0D0704 100%);
+    border-top: 1px solid #1A0E04;
+    border-bottom: 1px solid #1A0E04;
+}
+
+.pull-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: #FFFFFF;
+    font-size: 38px;
+    line-height: 1.5;
+    max-width: 880px;
+    margin: 0 auto 28px auto;
+}
+
+.quote-author {
+    font-family: 'Cinzel', serif;
+    color: #C4A882;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.stats-section {
+    padding: 90px 80px;
+    background-color: #0A0502;
+}
+
+.stats-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.stat-cell {
+    width: 33%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.stat-number {
+    font-family: 'Cinzel', serif;
+    color: #C4A882;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+}
+
+.stat-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #9A8060;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.stat-divider {
+    width: 1px;
+    background-color: #2A1A08;
+}
+
+.space-section {
+    padding: 0 80px 110px 80px;
+    background-color: #0A0502;
+}
+
+.space-title {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: #C4A882;
+    font-size: 14px;
+    letter-spacing: 6px;
+    margin: 0 0 50px 0;
+}
+
+.space-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.space-cell {
+    width: 33%;
+    padding: 0 6px;
+    vertical-align: top;
+}
+
+.space-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82);
+    transition: filter 0.3s;
+}
+
+.space-img:hover {
+    filter: brightness(1);
+}
+
+/* ---------- CONTACT PAGE ---------- */
+
+.contact-section {
+    padding: 110px 80px;
+    background-color: #0A0502;
+}
+
+.contact-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.contact-info-cell {
+    width: 42%;
+    padding: 0 70px 0 0;
+    vertical-align: top;
+}
+
+.contact-form-cell {
+    width: 58%;
+    vertical-align: top;
+}
+
+.info-heading {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin: 0 0 30px 0;
+}
+
+.info-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #D4A843;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin: 0 0 6px 0;
+}
+
+.info-value {
+    font-family: 'Cormorant Garamond', serif;
+    color: #E8DCC8;
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0 0 28px 0;
+}
+
+/* ---------- FORMS (contact + ordering shared) ---------- */
+
+.form-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #C4A882;
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #3A2810;
+    color: #FFFFFF;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.form-input:focus {
+    outline: none;
+    border-bottom: 1px solid #C4A882;
+}
+
+.form-input::placeholder {
+    color: #7A6040;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 14px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #3A2810;
+    color: #FFFFFF;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    box-sizing: border-box;
+    height: 60px;
+    resize: vertical;
+    margin-bottom: 30px;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #C4A882;
+}
+
+.form-textarea::placeholder {
+    color: #7A6040;
+}
+
+/* Dropdown select for products */
+.form-select {
+    width: 100%;
+    padding: 14px 4px;
+    background-color: #0D0704;
+    border: none;
+    border-bottom: 1px solid #3A2810;
+    color: #FFFFFF;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.form-select:focus {
+    outline: none;
+    border-bottom: 1px solid #C4A882;
+}
+
+/* Small quantity input */
+.form-qty {
+    width: 90px;
+    padding: 14px 4px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #3A2810;
+    color: #FFFFFF;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.form-qty:focus {
+    outline: none;
+    border-bottom: 1px solid #C4A882;
+}
+
+/* Radio and checkbox rows */
+.choice-row {
+    margin-bottom: 30px;
+}
+
+.choice-option {
+    font-family: 'Cormorant Garamond', serif;
+    color: #E8DCC8;
+    font-size: 17px;
+    margin-right: 26px;
+    cursor: pointer;
+}
+
+.choice-option input {
+    accent-color: #C4A882;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Gold submit button */
+.form-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #C4A882;
+    color: #080402;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    margin-top: 14px;
+}
+
+/* Secondary clear button */
+.clear-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    color: #C4A882;
+    border: 1px solid #C4A882;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+/* ---------- ORDERING PAGE ---------- */
+
+.ordering-section {
+    padding: 90px 20px 110px 20px;
+    background-color: #0A0502;
+}
+
+/* Central column card */
+.ordering-card {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* Block sub-heading inside the form */
+.block-label {
+    font-family: 'Cinzel', serif;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+/* Divider between form blocks */
+.section-divider {
+    margin: 55px 0;
+    border: none;
+    border-top: 1px solid #2A1A08;
+}
+
+/* Product row: select + qty side by side */
+.product-row {
+    display: table;
+    width: 100%;
+}
+
+.product-select-cell {
+    display: table-cell;
+    padding-right: 24px;
+    vertical-align: bottom;
+}
+
+.product-qty-cell {
+    display: table-cell;
+    width: 100px;
+    vertical-align: bottom;
+}
+
+/* ---------- RECEIPT PAGE ---------- */
+
+.receipt-section {
+    padding: 90px 20px 110px 20px;
+    background-color: #0A0502;
+}
+
+.receipt-card {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #2A1A08;
+    background-color: #0D0704;
+    padding: 50px;
+}
+
+.receipt-head {
+    text-align: center;
+    border-bottom: 1px solid #2A1A08;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+}
+
+.receipt-rest-name {
+    font-family: 'Cinzel', serif;
+    color: #D4A843;
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin: 0 0 8px 0;
+}
+
+.receipt-rest-info {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #9A8060;
+    font-size: 12px;
+    margin: 4px 0 0 0;
+    letter-spacing: 1px;
+}
+
+.receipt-meta {
+    display: table;
+    width: 100%;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #2A1A08;
+    padding-bottom: 22px;
+}
+
+.receipt-meta-left {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.receipt-meta-right {
+    display: table-cell;
+    text-align: right;
+    vertical-align: top;
+}
+
+.meta-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #C4A882;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 0 0 6px 0;
+}
+
+.meta-value {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.customer-block {
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #2A1A08;
+}
+
+.customer-row {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.customer-label {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #C4A882;
+    font-size: 10px;
+    letter-spacing: 2px;
+    width: 32%;
+    vertical-align: middle;
+}
+
+.customer-value {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 15px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+.items-head {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #2A1A08;
+    padding-bottom: 12px;
+    margin-bottom: 6px;
+}
+
+.ih-item {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #C4A882;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.ih-qty {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #C4A882;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 70px;
+}
+
+.ih-price {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #C4A882;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: right;
+    width: 140px;
+}
+
+.receipt-item {
+    display: table;
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid #1A0E04;
+}
+
+.ri-name {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+.ri-qty {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #C8C0B0;
+    font-size: 14px;
+    text-align: center;
+    width: 70px;
+    vertical-align: middle;
+}
+
+.ri-price {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #C4A882;
+    font-size: 14px;
+    text-align: right;
+    width: 140px;
+    vertical-align: middle;
+}
+
+.sub-row {
+    display: table;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.sub-label {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #9A8060;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.sub-value {
+    display: table-cell;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #C8C0B0;
+    font-size: 14px;
+    text-align: right;
+}
+
+.total-row {
+    display: table;
+    width: 100%;
+    padding: 18px 0 8px 0;
+    margin-top: 8px;
+    border-top: 1px solid #C4A882;
+}
+
+.total-label {
+    display: table-cell;
+    font-family: 'Cinzel', serif;
+    color: #D4A843;
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+.total-value {
+    display: table-cell;
+    font-family: 'Cinzel', serif;
+    color: #D4A843;
+    font-size: 19px;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.thankyou {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 26px;
+    border-top: 1px solid #2A1A08;
+}
+
+.thankyou-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #C8C0B0;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+}
+
+.thankyou-sub {
+    font-family: 'Cinzel', serif;
+    color: #7A6040;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.btn-row {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.print-btn {
+    padding: 14px 36px;
+    background-color: transparent;
+    color: #C4A882;
+    border: 1px solid #C4A882;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.new-order-btn {
+    padding: 14px 36px;
+    background-color: #C4A882;
+    color: #080402;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.empty-msg {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #7A6040;
+    font-size: 17px;
+    padding: 40px 0;
+}
+
+/* ---------- FOOTER (shared) ---------- */
+
+footer {
+    background-color: #030201;
+    padding: 60px 60px 30px 60px;
+    border-top: 1px solid #2A1A08;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #E8E0D0;
+    margin: 0 0 4px 0;
+    letter-spacing: 12px;
+}
+
+.footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin: 0 0 30px 0;
+    letter-spacing: 2px;
+}
+
+.footer-divider {
+    border-top: 1px solid #2A1A08;
+    margin-bottom: 40px;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.footer-cell {
+    width: 33%;
+    padding: 0 20px;
+    text-align: center;
+    vertical-align: top;
+    border-right: 1px solid #2A1A08;
+}
+
+.footer-cell-last {
+    width: 33%;
+    padding: 0 20px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.footer-label {
+    font-family: 'Cinzel', serif;
+    color: #C4A882;
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin: 0 0 14px 0;
+}
+
+.footer-info {
+    font-family: 'Cormorant Garamond', serif;
+    color: #9A8060;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1A0E04;
+    padding-top: 24px;
+}
+
+.footer-copy {
+    font-family: 'Cormorant Garamond', serif;
+    color: #6A5040;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ---------- PRINT STYLES (receipt page) ---------- */
+
+@media print {
+    header, nav, footer,
+    .section-heading, .section-sub,
+    .btn-row, .ornament {
+        display: none !important;
+    }
+
+    body {
+        background-color: #FFFFFF;
+    }
+
+    .receipt-section {
+        padding: 0;
+        background: none;
+    }
+
+    .receipt-card {
+        max-width: 100%;
+        border: 1px solid #999999;
+        background-color: #FFFFFF;
+        padding: 30px;
+        margin: 0;
+    }
+
+    .receipt-rest-name { color: #8B6914; }
+    .receipt-rest-info { color: #555555; }
+    .meta-value, .customer-value, .ri-name { color: #000000; }
+    .meta-label, .customer-label, .ih-item, .ih-qty, .ih-price { color: #8B6914; }
+    .ri-qty, .ri-price, .sub-label, .sub-value { color: #555555; }
+    .total-label, .total-value { color: #8B6914; }
+    .thankyou-text { color: #555555; }
+    .thankyou-sub { color: #999999; }
+}
